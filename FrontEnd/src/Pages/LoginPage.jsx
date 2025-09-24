@@ -10,7 +10,7 @@ function LoginPage() {
  return (
   <div className="container">
    <div className="LoginPageStyle d-flex align-items-center justify-content-center" style={{ width: '100%', height: '100vh' }} >
-    <div className="Login" style={{ padding: '40px 20px', border: '1px solid var(--black-color)', borderRadius: '10px', width: '40%', boxShadow: '0px 0px 40px 1px #ff840042', border: '1px solid var(--white-color)' }}>
+    <div className="Login" style={{ padding: '40px 20px', borderRadius: '10px', width: '40%', boxShadow: '0px 0px 40px 1px #ff840042', border: '1px solid var(--white-color)' }}>
      <div className="LoginHeading text-center" style={{ marginBottom: '30px' }}>
       <h2 style={{ fontSize: '32px', fontWeight: '800' }}>Login Auto Cart</h2>
      </div>
@@ -35,7 +35,7 @@ function LoginPage() {
        <a href="#" style={{ fontSize: '12px', fontWeight: '400', color: 'var(--orange-color)' }}>Forgot Password</a>
       </div>
       <div className="Submit text-center">
-       <button className="SubmitBtn" style={{ fontSize: '16px', textTransform: 'uppercase', fontWeight: '500', padding: '10px 30px', borderRadius: '5px', border: 'none', background: 'var(--orange-color)', color: 'var(--white-color)' }} onClick={() => navigate("/MainPage")}>Login</button>
+       <button className="SubmitBtn" style={{ fontSize: '16px', textTransform: 'uppercase', fontWeight: '500', padding: '10px 30px', borderRadius: '5px', border: 'none', background: 'var(--orange-color)', color: 'var(--white-color)' }} onClick={() => navigate("/mainpage")}>Login</button>
       </div>
      </div>
      <div className="OtherLogin d-flex align-items-center justify-content-center" style={{ marginTop: '30px', gap: '30px' }}>
