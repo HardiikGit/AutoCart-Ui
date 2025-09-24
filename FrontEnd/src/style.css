@@ -160,3 +160,15 @@ img,
   color: var(--white-color) !important;
   background: var(--orange-color) !important;
 }
+.UserEmailPhn input::placeholder {
+  color: var(--orange-color);
+}
+.UserEmailPhn input:focus {
+  box-shadow: 0px 0px 1px 1px var(--orange-color);
+}
+.SubmitBtn:hover {
+  box-shadow: 0px 0px 4px 4px var(--grey-color);
+}
+.Social-links a:hover {
+  color: var(--black-color) !important;
+}

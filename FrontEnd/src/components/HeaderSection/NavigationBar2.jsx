@@ -34,7 +34,7 @@ function NextNavigationBar() {
                      <ul className="NavListLinks d-flex align-items-center" style={{ gap: '40px' }}>
                         <li className="DropDownButton" style={{ position: 'relative' }}>
                            <button style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 20px', background: 'var(--white-color)', border: '1px solid var(--white-color)', fontSize: '18px', fontWeight: '600', color: 'var(--black-color)', borderRadius: '5px' }} onClick={() => setCategory(!category)}><HiMiniBars3CenterLeft />Shop By Categories</button>
-                           <div className={category ? "active" : "Category"} style={{ position: 'absolute', top: '70px', left: '0', zIndex: '999', background: 'var(--white-color)', display: 'none', width: '100', }}>
+                           <div className={category ? "active" : "Category"} style={{ position: 'absolute', top: '70px', left: '0', zIndex: '999', background: 'var(--white-color)', display: 'none', width: '100%', }}>
                               <ul className="CatList">
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
                                     <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Our Store</a>

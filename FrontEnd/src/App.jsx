@@ -1,20 +1,15 @@
+import { Routes, Route } from 'react-router'
 import './style.css'
-import HeaderSection from "./components/HeaderSection/HeaderSection"
-import BannerSection from "./components/BannerSection"
-import CompaniesSlider from "./components/CompanySlider"
-import TrendingProducts from "./components/TrendingProducts";
-import AddvertismentCards from './components/MiddleCards';
-import LatestProducts from './components/LatestProduct';
+import LoginPage from './Pages/LoginPage';
+import MainPage from './Pages/MainPage';
 
 function App() {
   return (
     <>
-      <HeaderSection />
-      <BannerSection />
-      <CompaniesSlider />
-      <TrendingProducts />
-      <AddvertismentCards />
-      <LatestProducts />
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/mainpage" element={<MainPage />} />
+      </Routes>
     </>
   )
 }

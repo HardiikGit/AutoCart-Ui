@@ -18,6 +18,7 @@ body {
 a,
 button {
   cursor: pointer;
+  pointer-events: all;
 }
 a,
 button,

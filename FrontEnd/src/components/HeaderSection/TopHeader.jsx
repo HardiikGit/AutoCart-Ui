@@ -15,10 +15,9 @@ function TopHeaderSection() {
    };
 
    const TopBar = { padding: "10px 0px 10px 0px", backgroundColor: "var(--grey-color)" }
-
    const borderStyle = { borderRight: "1px solid var(--black-color)", borderLeft: "1px solid var(--black-color)" }
-
    const rightBorder = { borderRight: "1px solid var(--black-color)" }
+   const leftBorder = { borderLeft: '1px solid var(--black-color)' }
 
    return (
       <div className="TopBar" style={TopBar}>
@@ -39,7 +38,7 @@ function TopHeaderSection() {
                </div>
                <div className="col-lg-6">
                   <div className="topContent">
-                     <ul className="topSlideShow d-flex justify-content-end">
+                     <ul className="topSlideShow d-flex justify-content-end align-items-center">
                         <li className="slideShow-items">
                            <a href="">Track Order</a>
                         </li>
@@ -100,6 +99,11 @@ function TopHeaderSection() {
                                     <a href="">Francias</a>
                                  </li>
                               </ul>
+                           </div>
+                        </li>
+                        <li className="slideShow-items" style={leftBorder}>
+                           <div className="loginButton">
+                              <a href="">Login</a>
                            </div>
                         </li>
                      </ul>
