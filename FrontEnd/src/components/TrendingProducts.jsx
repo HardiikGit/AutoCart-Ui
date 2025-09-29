@@ -1,4 +1,4 @@
-import BodyPartSlider from "./BodyParttsSlider";
+import TrendingProductsSlider from "./TrendingProductsSlider";
 
 function TrendingProducts() {
    return (
@@ -29,7 +29,7 @@ function TrendingProducts() {
                      </div>
                   </div>
                   <>
-                     <BodyPartSlider />
+                     <TrendingProductsSlider />
                   </>
                </div>
             </div>

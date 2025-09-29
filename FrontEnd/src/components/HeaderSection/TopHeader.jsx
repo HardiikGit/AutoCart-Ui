@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function TopHeaderSection() {
    const [show, setShow] = useState(0)
@@ -23,7 +24,7 @@ function TopHeaderSection() {
       <div className="TopBar" style={TopBar}>
          <div className="container">
             <div className="row">
-               <div className="col-lg-6">
+               <div className="col-lg-6 col-md-12">
                   <div className="topContent">
                      <p>
                         Get Upto 25% Cashback On First Order: { }
@@ -103,7 +104,7 @@ function TopHeaderSection() {
                         </li>
                         <li className="slideShow-items" style={leftBorder}>
                            <div className="loginButton">
-                              <a href="">Login</a>
+                              <Link to="/login">Login</Link>
                            </div>
                         </li>
                      </ul>

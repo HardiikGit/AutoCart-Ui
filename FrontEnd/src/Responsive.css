@@ -1,0 +1,26 @@
+@media (max-width: 993px) {
+  .topSlideShow,
+  .HelpCenter,
+  .CartCount,
+  .WeeklyDeal,
+  .NavListLinks {
+    display: none;
+  }
+  .topContent p {
+    text-align: center;
+  }
+  .Logo {
+    width: 140px;
+  }
+  .UserLogin a,
+  .WishList a,
+  .CartPage a {
+    font-size: 26px;
+  }
+  .SearchInput {
+    width: 100%;
+  }
+  .BannerBoxes {
+    flex-direction: row;
+  }
+}

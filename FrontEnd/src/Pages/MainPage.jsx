@@ -3,7 +3,8 @@ import CompaniesSlider from "../components/CompanySlider";
 import HeaderSection from "../components/HeaderSection/HeaderSection";
 import LatestProducts from "../components/LatestProduct";
 import AddvertismentCards from "../components/MiddleCards";
-import TrendingProducts from "../components/TrendingProducts";
+import ShopbyCategory from "../components/ShopByCategories";
+import TrendingProductsSlider from "../components/TrendingProductsSlider";
 
 function MainPage() {
  return (
@@ -11,9 +12,10 @@ function MainPage() {
    <HeaderSection />
    <BannerSection />
    <CompaniesSlider />
-   <TrendingProducts />
+   <TrendingProductsSlider />
    <AddvertismentCards />
    <LatestProducts />
+   <ShopbyCategory />
   </>
  )
 }

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { API_GET } from "../config";
 
 function CompaniesSlider() {
@@ -9,7 +9,7 @@ function CompaniesSlider() {
       <div className="MainCompanySlider" style={{ padding: "50px 0px" }}>
          <div className="container">
             <div className="row">
-               <div className="col-lg-12">
+               <div className="col-lg-12 col-md-12">
                   <Swiper
                      modules={[Autoplay]}
                      slidesPerView={3}
@@ -17,10 +17,10 @@ function CompaniesSlider() {
                      loop={true}
                      speed={1000}
                      breakpoints={{
-                        320: { slidesPerView: 1 },
-                        640: { slidesPerView: 2 },
-                        1024: { slidesPerView: 4 },
-                        1440: { slidesPerView: 5 },
+                        320: { slidesPerView: 2 },
+                        640: { slidesPerView: 4 },
+                        1024: { slidesPerView: 5 },
+                        1440: { slidesPerView: 7 },
                      }}
                      autoplay={{ delay: 2000, disableOnInteraction: false, }}
                      className="mySwiper">

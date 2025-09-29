@@ -11,7 +11,7 @@ function NavigationBarSection() {
          <nav className="NavigationBar" style={{ padding: "20px 0px" }}>
             <div className="container">
                <div className="row align-items-center">
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-3">
                      <div className="LogoSection">
                         <div className="Logo">
                            <a href="">
@@ -20,7 +20,7 @@ function NavigationBarSection() {
                         </div>
                      </div>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                      <div className="NavigationSearchBar d-flex align-items-center justify-content-center" style={{ gap: "15px" }}>
                         <div className="SearchInput d-flex align-items-center hidden">
                            <input type="search" placeholder='Search' minLength={1} maxLength={100} />
@@ -33,7 +33,7 @@ function NavigationBarSection() {
                         </div>
                      </div>
                   </div>
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 col-md-3">
                      <div className="QuickLinks d-flex align-items-center justify-content-end" style={{ gap: "15px" }}>
                         <div className="UserLogin">
                            <a href="">

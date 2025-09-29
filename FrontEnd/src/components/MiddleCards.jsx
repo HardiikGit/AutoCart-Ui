@@ -5,7 +5,7 @@ function AddvertismentCards() {
       <div className="MainAddSetion">
          <div className="container">
             <div className="row">
-               <div className="col-lg-12">
+               <div className="col-lg-12 col-md-12">
                   <div className="AddSection">
                      <div className="AddsBoxes d-flex align-items-center justify-space-between" style={{ gap: '20px' }}>
                         <div className="AddsContent relative hidden" style={{ borderRadius: '5px', height: '227px' }}>

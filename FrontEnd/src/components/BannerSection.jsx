@@ -13,7 +13,7 @@ function BannerSection() {
       <div className='MainBannerSection' style={{ padding: '20px' }}>
          <div className="container">
             <div className="row">
-               <div className="col-lg-8">
+               <div className="col-lg-8 col-md-12">
                   <Swiper
                      autoplay={{ delay: 4000, disableOnInteraction: false }}
                      spaceBetween={30}
@@ -76,7 +76,7 @@ function BannerSection() {
                   </Swiper>
                </div>
 
-               <div className="col-lg-4">
+               <div className="col-lg-4 col-md-12">
                   <div className="RightBannerSection">
                      <div className="BannerBoxes d-flex flexcolumn" style={{ gap: '20px' }}>
                         <div className="SlipPad relative" style={{ height: '227px', zIndex: '0' }}>
