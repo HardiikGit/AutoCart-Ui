@@ -3,6 +3,8 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { BiSolidOffer } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function NextNavigationBar() {
    const [category, setCategory] = useState(false)
@@ -10,6 +12,7 @@ function NextNavigationBar() {
    const [hover, setHover] = useState(false)
    const [hover2, setHover2] = useState(false)
    const [show, setShow] = useState(0)
+   const [isOpen, setIsOpen] = useState(false)
 
    useEffect(() => {
       const handleScroll = () => {
@@ -173,13 +176,65 @@ function NextNavigationBar() {
                         </li>
                      </ul>
                   </div>
-                  <div className="MenuBarResponsive d-flex align-items-center justify-space-between d-none">
+                  <div className="MenuBarResponsive align-items-center justify-space-between d-none">
                      <div className="MenuButton">
-                        <button className="Navigatio_Button d-flex align-items-center" style={{ gap: '5px', background: 'none', fontSize: '18px', fontWeight: '500', color: 'var(--white-color)', border: 'none' }}>
+                        <button className="Navigatio_Button d-flex align-items-center" style={{ gap: '5px', background: 'none', fontSize: '18px', fontWeight: '500', color: 'var(--white-color)', border: 'none' }}
+                           onClick={() => setIsOpen(true)} >
                            <HiMiniBars3CenterLeft />
                            Menu
                         </button>
                      </div>
+                     <div className={`OverLay ${isOpen ? 'Agya' : ''}`} onClick={() => setIsOpen(false)}></div>
+                     <div className={`Responsive_Navigation ${isOpen ? 'Agya' : ''}`} style={{ position: 'fixed', top: '0', left: '-100%', zIndex: '9999', width: '50%', height: '100vh', background: 'var(--white-color)', transition: 'all ease-in-out .5s' }}>
+                        <div className="Head d-flex justify-space-between align-items-center" style={{
+                           padding: '10px 20px', borderBottom: '3px solid var(--grey-color)'
+                        }} >
+                           <div className="Heading2">
+                              <h2 style={{ textTransform: 'uppercase', fontSize: '26px', fontWeight: '500' }}>Menu</h2>
+                           </div>
+                           <div className="Cross-X" style={{ position: 'relative', zIndex: '999999999999' }}>
+                              <button style={{ background: 'none', padding: '10px', border: 'none', fontSize: '28px' }} onClick={() => setIsOpen(false)}>
+                                 <RxCross2 />
+                              </button>
+                           </div>
+                        </div>
+                        <div className="Responsive_List" style={{ borderBottom: '3px solid var(--grey-color)', padding: '20px 20px' }}>
+                           <ul className="d-flex flexcolumn" style={{ gap: '30px' }}>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Home</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Shop</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Collections</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Headlights</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Contact</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Blog</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Track Order</a>
+                              </li>
+                              <li className="Links">
+                                 <a href="#" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Help Center</a>
+                              </li>
+                              <li className="Links">
+                                 <Link to="/login" style={{ fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--black-color)' }}>Login</Link>
+                              </li>
+                           </ul>
+                           <div className="HelpCenter" style={{ display: 'block', marginTop: '30px' }}>
+                              <p>Need Help?</p>
+                              <a href="">9876-543-210</a>
+                           </div>
+                        </div>
+                     </div>
+
                      <div className="topContent">
                         <ul className="topSlideShow-1 d-flex justify-content-end align-items-center">
                            <li className="slideShow-items relative" style={rightBorder}>

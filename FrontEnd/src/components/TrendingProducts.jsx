@@ -2,7 +2,7 @@ import TrendingProductsSlider from "./TrendingProductsSlider";
 
 function TrendingProducts() {
    return (
-      <div className="MainTrendingProductsSection" style={{ padding: '50px 0px' }}>
+      <div className="MainTrendingProductsSection" style={{ padding: '50px 0px', }}>
          <div className="container">
             <div className="row">
                <div className="col-lg-12">

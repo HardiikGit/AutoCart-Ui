@@ -1,8 +1,9 @@
 import { API_GET } from "../config";
 
 function AddvertismentCards() {
+   const style = { padding: '30px 0px', background: 'var(--grey-color)' }
    return (
-      <div className="MainAddSetion">
+      <div className="MainAddSetion" style={style}>
          <div className="container">
             <div className="row">
                <div className="col-lg-12 col-md-12">
@@ -64,7 +65,7 @@ function AddvertismentCards() {
                </div>
             </div>
          </div>
-      </div>
+      </div >
    )
 }
 

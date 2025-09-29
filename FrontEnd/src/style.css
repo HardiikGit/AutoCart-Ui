@@ -155,6 +155,9 @@ img,
     opacity: 1;
   }
 }
+.BodyCard {
+  height: 400px;
+}
 .CartButton {
   transition: 0.5s all ease-in-out !important;
 }

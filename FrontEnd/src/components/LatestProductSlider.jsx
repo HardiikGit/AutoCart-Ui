@@ -10,7 +10,7 @@ function LatestSlider() {
   const swiperStop = useRef(null)
 
   return (
-    <div className="row" style={{ flexDirection: 'column-reverse', gap: '30px' }}>
+    <div className="row">
       <div className="col-lg-3">
         <div className="trending_Banner hidden relative d-flex justify-content-center" style={{ width: '100%', maxHeight: '400px', borderRadius: '10px', color: 'var(--white-color)' }}>
           <img src={`${API_GET}/${'68d1202614c1dbf02b9598d9'}`} className='img-cover' alt="" />
@@ -27,7 +27,7 @@ function LatestSlider() {
       <div className="col-lg-9">
         <div onMouseEnter={() => swiperStop.current.autoplay.stop()}
           onMouseLeave={() => swiperStop.current.autoplay.start()}>
-          <Swiper className='mySwiper'
+          <Swiper className='mySwiper margin0'
             modules={[Autoplay, Navigation]}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
             breakpoints={{

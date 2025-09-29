@@ -13,7 +13,7 @@ function BannerSection() {
       <div className='MainBannerSection' style={{ padding: '20px' }}>
          <div className="container">
             <div className="row">
-               <div className="col-lg-8 col-md-12">
+               <div className="col-lg-8 col-md-12 col-sm-12">
                   <Swiper
                      autoplay={{ delay: 4000, disableOnInteraction: false }}
                      spaceBetween={30}
@@ -32,7 +32,6 @@ function BannerSection() {
                            src={`${API_GET}/${'68c90f08c8b63503abe24460'}`}
                            alt="Banner_1"
                            className='img-cover'
-                           style={{ width: '100%', height: '100%' }}
                         />
                         <div className="BannerHeading absolute" style={{ top: '0px', zIndex: '99', padding: '60px 0px 0px 30px' }}>
                            <div className='BannerSubHeading' style={{ marginBottom: '20px' }}>
@@ -55,7 +54,6 @@ function BannerSection() {
                            src={`${API_GET}/${'68c90f89c8b63503abe24462'}`}
                            alt="Banner_2"
                            className='img-cover'
-                           style={{ width: '100%', height: '100%' }}
                         />
                         <div className="BannerHeading absolute" style={{ top: '0px', zIndex: '99', padding: '60px 0px 0px 30px' }}>
                            <div className='BannerSubHeading' style={{ marginBottom: '20px' }}>

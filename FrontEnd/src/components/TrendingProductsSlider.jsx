@@ -38,7 +38,6 @@ function TrendingProductsSlider() {
                      slidesPerView: 5
                   }
                }}
-               onSlideChange={(SwiperSlide) => { console.log(SwiperSlide) }}
                className="mySwiper">
                <SwiperSlide>
                   <div className="BodyCard" style={{ border: '1px solid #00000039', cursor: 'pointer' }}>
@@ -320,7 +319,7 @@ function TrendingProductsSlider() {
                      slidesPerView: 5
                   }
                }}
-               onSlideChange={(SwiperSlide) => { console.log(SwiperSlide) }}
+
                className="mySwiper">
                <SwiperSlide>
                   <div className="BodyCard" style={{ border: '1px solid #00000039', cursor: 'pointer' }}>
@@ -602,7 +601,7 @@ function TrendingProductsSlider() {
                      slidesPerView: 5
                   }
                }}
-               onSlideChange={(SwiperSlide) => { console.log(SwiperSlide) }}
+
                className="mySwiper">
                <SwiperSlide>
                   <div className="BodyCard" style={{ border: '1px solid #00000039', cursor: 'pointer' }}>
@@ -862,7 +861,7 @@ function TrendingProductsSlider() {
    }
 
    return (
-      <div className="Trending_Product_Slider" style={{ padding: '50px 0px' }}>
+      <div className="Trending_Product_Slider" style={{ padding: '50px 0px', }}>
          <div className="container">
             <div className="row">
                <div className="col-lg-12 col-md-12">

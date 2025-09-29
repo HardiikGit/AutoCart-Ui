@@ -1,6 +1,7 @@
-const express = require("express");
-const { MongoClient, GridFSBucket, ObjectId } = require("mongodb");
-const cors = require("cors");
+import express from "express";
+import { MongoClient, GridFSBucket, ObjectId } from "mongodb";
+import cors from "cors";
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -10,7 +11,8 @@ app.use(
     methods: ["GET", "POST"],
   })
 );
-app.use(express.json({ limit: "10mb" }));
+app.use(express.json({ limit: "100mb" }));
+app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
 const mongoURI =
   "mongodb+srv://AutoCartdb:Admin123@cluster0.peihb2y.mongodb.net/";

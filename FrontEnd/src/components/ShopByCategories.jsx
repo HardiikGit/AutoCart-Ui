@@ -23,10 +23,11 @@ function ShopbyCategory() {
         loop={true}
         autoplay={{ delay: 20000, disableOnInteraction: false }}
         breakpoints={{
-         380: { slidesPerView: 1 },
-         600: { slidesPerView: 2 },
-         900: { slidesPerView: 3 },
-         1200: { slidesPerView: 3 }
+         320: { slidesPerView: 1 },
+         640: { slidesPerView: 2 },
+         768: { slidesPerView: 3 },
+         1024: { slidesPerView: 3 },
+         1280: { slidesPerView: 4 },
         }}
         pagination={{ clickable: true, }}
         className="mySwiper"

@@ -11,12 +11,39 @@ function NavigationBarSection() {
          <nav className="NavigationBar" style={{ padding: "20px 0px" }}>
             <div className="container">
                <div className="row align-items-center">
-                  <div className="col-lg-3 col-md-3">
-                     <div className="LogoSection">
+                  <div className="col-lg-3 col-md-3 col-sm-12">
+                     <div className="LogoSection d-flex align-items-center justify-space-between">
                         <div className="Logo">
                            <a href="">
                               <img src={Logo} className='img-cover' alt="" />
                            </a>
+                        </div>
+                        <div className="QuickLinks2 d-flex align-items-center justify-content-end d-none" style={{ gap: "15px" }}>
+                           <div className="UserLogin">
+                              <a href="">
+                                 <CiUser />
+                              </a>
+                           </div>
+                           <div className="WishList">
+                              <a href="">
+                                 <CiHeart />
+                              </a>
+                           </div>
+                           <div className="CartPage">
+                              <a href="" className="d-flex align-items-center">
+                                 <div className="CartIcon">
+                                    <CiShoppingCart />
+                                 </div>
+                                 <div className="CartCount">
+                                    <p className="d-flex flexcolumn">
+                                       $0.00
+                                       <b>
+                                          My Cart
+                                       </b>
+                                    </p>
+                                 </div>
+                              </a>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -33,7 +60,7 @@ function NavigationBarSection() {
                         </div>
                      </div>
                   </div>
-                  <div className="col-lg-3 col-md-3">
+                  <div className="col-lg-3 col-md-3 col-sm-12">
                      <div className="QuickLinks d-flex align-items-center justify-content-end" style={{ gap: "15px" }}>
                         <div className="UserLogin">
                            <a href="">

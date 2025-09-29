@@ -41,6 +41,11 @@ function CompaniesSlider() {
                      </SwiperSlide>
                      <SwiperSlide>
                         <div className="SlideImage d-flex align-items-center justify-content-center">
+                           <img src={`${API_GET}/${'68c91e71b25298586d231b6b'}`} alt="6" />
+                        </div>
+                     </SwiperSlide>
+                     <SwiperSlide>
+                        <div className="SlideImage d-flex align-items-center justify-content-center">
                            <img src={`${API_GET}/${'68c91e3db25298586d231b67'}`} alt="4" />
                         </div>
                      </SwiperSlide>
@@ -51,7 +56,17 @@ function CompaniesSlider() {
                      </SwiperSlide>
                      <SwiperSlide>
                         <div className="SlideImage d-flex align-items-center justify-content-center">
+                           <img src={`${API_GET}/${'68c91dd2b25298586d231b61'}`} alt="1" />
+                        </div>
+                     </SwiperSlide>
+                     <SwiperSlide>
+                        <div className="SlideImage d-flex align-items-center justify-content-center">
                            <img src={`${API_GET}/${'68c91e71b25298586d231b6b'}`} alt="6" />
+                        </div>
+                     </SwiperSlide>
+                     <SwiperSlide>
+                        <div className="SlideImage d-flex align-items-center justify-content-center">
+                           <img src={`${API_GET}/${'68c91e3db25298586d231b67'}`} alt="4" />
                         </div>
                      </SwiperSlide>
                   </Swiper>

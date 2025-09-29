@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Images Form</title>
+  </head>
+  <body class="w-full h-screen flex items-center justify-center">
+    <div class="container mx-auto">
+      <h2 class="text-center">Add File Data</h2>
+      <form id="fileForm">
+        <label>Name:</label><br />
+        <input type="text" id="name" required /><br /><br />
+
+        <label>Category:</label><br />
+        <input type="text" id="category" required /><br /><br />
+
+        <label>Price:</label><br />
+        <input type="number" id="price" required /><br /><br />
+
+        <button type="submit">Add File</button>
+      </form>
+
+      <h2>Files List</h2>
+      <div id="fileList"></div>
+    </div>
+
+    <script>
+      const form = document.getElementById("fileForm");
+      const fileList = document.getElementById("fileList");
+
+      // ✅ Handle Form Submit
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fileData = {
+          name: document.getElementById("name").value,
+          category: document.getElementById("category").value,
+          price: document.getElementById("price").value,
+        };
+
+        await fetch("http://localhost:5000/files", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(fileData),
+        });
+
+        form.reset();
+        loadFiles();
+      });
+
+      // ✅ Load Files from API
+      async function loadFiles() {
+        const res = await fetch("http://localhost:5000/files");
+        const data = await res.json();
+        fileList.innerHTML = data
+          .map((f) => `<p>${f.name} - ${f.category} - ₹${f.price}</p>`)
+          .join("");
+      }
+
+      // Load on page start
+      loadFiles();
+    </script>
+  </body>
+</html>
