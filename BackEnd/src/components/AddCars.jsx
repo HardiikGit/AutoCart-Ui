@@ -3,6 +3,7 @@ import { useState } from "react";
 function AddCars() {
  const [name, setName] = useState("");
  const [base64, setBase64] = useState("");
+ const UploadCars = import.meta.env.VITE_UPLOAD
 
  const handleSubmit = async () => {
   if (!name || !base64) {
@@ -11,7 +12,7 @@ function AddCars() {
   }
 
   try {
-   const res = await fetch("http://localhost:5000/upload", {
+   const res = await fetch(UploadCars, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, base64 }),
@@ -40,14 +41,16 @@ function AddCars() {
     </h2>
     <div className="flex w-full flex-col gap-5 mt-5">
      <input
-      className="w-1/2 mx-auto px-2.5 py-2.5 outline-0 focus:border-2 focus:border-amber-600 border-0 focus:border-t-0 focus:border-r-0 focus:border-l-0 placeholder:text-black"
+      className="w-1/2 mx-auto px-2.5 py-2.5 outline-0 focus:border-2 focus:border-amber-600 border-0 placeholder:text-black border-b-2 
+      border-amber-600 focus:rounded-full focus:px-5"
       type="text"
       value={name}
       onChange={(e) => setName(e.target.value)}
       placeholder="Enter Car Name"
      />
      <input
-      className="w-1/2 mx-auto px-2.5 py-2.5 outline-0 focus:border-2 focus:border-amber-600 border-0 focus:border-t-0 focus:border-r-0 focus:border-l-0 placeholder:text-black"
+      className="w-1/2 mx-auto px-2.5 py-2.5 outline-0 focus:border-2 focus:border-amber-600 border-0 placeholder:text-black border-b-2 
+      border-amber-600 focus:rounded-full focus:px-5"
       type="text"
       value={base64}
       onChange={(e) => setBase64(e.target.value)}
@@ -55,7 +58,8 @@ function AddCars() {
      />
      <button
       onClick={handleSubmit}
-      className="border-2 p-2.5 rounded-full cursor-pointer text-md uppercase w-1/9 mx-auto transition-all hover:bg-orange-500 hover:border-orange-500 hover:text-amber-50"
+      className="border-2 border-amber-600 p-2.5 rounded-full cursor-pointer text-md uppercase w-44 mx-auto transition-all 
+      hover:bg-orange-500 hover:border-orange-500 hover:text-amber-50"
      >
       Add Car
      </button>

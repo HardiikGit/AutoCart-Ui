@@ -1,12 +1,12 @@
-import AddCars from "./components/PostMan";
-import ShowCars from "./components/ShowCars";
+import { Route, Routes } from "react-router-dom";
+import DashBoard from "./pages/MainPage";
+
 
 function App() {
   return (
-    <>
-      <AddCars />
-      <ShowCars />
-    </>
+    <Routes>
+      <Route path="/" element={<DashBoard />} />
+    </Routes>
   )
 }
 

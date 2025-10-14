@@ -5,13 +5,10 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://auto-cart-ui.vercel.app",
-];
+// const allowedOrigins = ["https://auto-cart-ui.vercel.app"];
 app.use(
   cors({
-    origin: true,
+    // origin: true,
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -97,7 +94,29 @@ app.get("/file/:id", async (req, res) => {
   }
 });
 
+app.delete("/file/:id", async (req, res) => {
+  try {
+    const fileId = new ObjectId(req.params.id);
+
+    // Find file by ID in GridFS metadata
+    const file = await db
+      .collection("AutoParts.files")
+      .findOne({ _id: fileId });
+
+    if (!file) {
+      return res.status(404).json({ error: "File not found" });
+    }
+
+    // Delete file from GridFS (both files + chunks)
+    await bucket.delete(fileId);
+
+    res.json({ message: `File '${file.filename}' deleted successfully!` });
+  } catch (err) {
+    console.error("❌ Delete Error:", err);
+    res.status(400).json({ error: "Invalid File ID or delete failed" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}......`);
 });
-
