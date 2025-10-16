@@ -1,12 +1,13 @@
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import DashBoard from "./pages/MainPage";
 
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<DashBoard />} />
-    </Routes>
+    <DashBoard />
+    // <Routes>
+    //   <Route path="/" element={<DashBoard />} />
+    // </Routes>
   )
 }
 
