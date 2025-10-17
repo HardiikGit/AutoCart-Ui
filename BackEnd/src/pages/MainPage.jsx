@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TabSwitchButton from "../components/TabSwitchButton";
-import ShowCars from "../components/ShowCars";
-import AddCars from "../components/AddCars";
-import AddCards from "../components/AddCards";
+import AddImages from "../components/AddImages";
+import AddProducts from "../components/AddProducts";
+import ShowImages from "../components/ShowImages";
 
 function DashBoard() {
  const [activeTab, setActiveTab] = useState("add");
@@ -10,9 +10,9 @@ function DashBoard() {
  return (
   <div>
    <TabSwitchButton activeTab={activeTab} setActiveTab={setActiveTab} />
-   {activeTab === "add" && <AddCars />}
-   {activeTab === "view" && <ShowCars />}
-   {activeTab === "addcard" && <AddCards />}
+   {activeTab === "add" && <AddImages />}
+   {activeTab === "view" && <ShowImages />}
+   {activeTab === "addcard" && <AddProducts />}
   </div>
  );
 }

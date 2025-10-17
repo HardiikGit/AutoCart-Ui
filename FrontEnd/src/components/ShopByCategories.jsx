@@ -8,7 +8,7 @@ import { API_GET } from '../config';
 function ShopbyCategory() {
 
  return (
-  <div className="MainShopByCategory" style={{ backgroundColor: 'var(--grey-color)', backgroundImage: '', padding: '60px 0px' }}>
+  <div className="MainShopByCategory" style={{ backgroundImage: (`${API_GET}/${'68f20da40f59a173b826b8e9'}`), backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', padding: '60px 0px', width: '100%', height: '100%' }}>
    <div className="container">
     <div className="row">
      <div className="col-lg-12 col-md-12">

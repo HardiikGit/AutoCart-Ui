@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const ALL_IMAGES = import.meta.env.VITE_IMAGES;
 
-export default function ShowCars() {
+function ShowImages() {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,9 +20,10 @@ export default function ShowCars() {
       });
   }, []);
 
+  // Delete image by ID
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this image?")) return;
-    
+
     try {
       const response = await fetch(`${import.meta.env.VITE_SINGLE_IMAGE}/${id}`, {
         method: "DELETE",
@@ -51,7 +52,7 @@ export default function ShowCars() {
 
   return (
     <div className="container mx-auto p-10">
-      <h1 className="text-center font-bold text-5xl text-orange-600 mb-10 uppercase">
+      <h1 className="text-center font-bold text-3xl text-amber-600 mb-10 uppercase">
         Images List
       </h1>
 
@@ -63,22 +64,21 @@ export default function ShowCars() {
             .slice()
             .reverse()
             .map((car) => (
-              <li
-                key={car._id}
-                className="border-2 border-amber-600 rounded-lg p-3 text-center"
-              >
-                <strong className="block mb-2">{car.filename}</strong>
-                <img
-                  src={`${import.meta.env.VITE_SINGLE_IMAGE}/${car._id}`}
-                  className="w-full h-64 object-contain rounded-md shadow-md"
-                />
+              <li key={car._id} className="border-2 border-amber-600 rounded-lg p-5 text-center">
+                <strong className="block">Image _id :- {car._id}</strong>
+                <strong>Image Name :- {car.filename}</strong>
+                <img src={`${import.meta.env.VITE_SINGLE_IMAGE}/${car._id}`} className="w-full h-64 object-contain rounded-md shadow-md mt-5" />
                 <button
-                  className="my-5 px-7 py-1 border-2 border-amber-600 text-lg font-bold rounded-sm cursor-pointer"
+                  className="px-7 py-1 border-2 border-amber-600 text-lg font-bold rounded-sm cursor-pointer my-5"
                   onClick={() => handleDelete(car._id)}>Delete</button>
               </li>
             ))}
         </ul>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 }
+
+
+export default ShowImages;

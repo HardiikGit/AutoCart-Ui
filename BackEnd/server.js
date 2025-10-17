@@ -7,17 +7,14 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5174"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
 // --- Body parser ---
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ extended: true, limit: "100mb" }));
-app.use(cors());
 
 // --- MongoDB setup ---
 const mongoURI =
@@ -35,7 +32,7 @@ MongoClient.connect(mongoURI, { useUnifiedTopology: true })
 
 // --- Routes ---
 
-// Upload car image
+// Upload car image POST METHOD
 app.post("/upload", async (req, res) => {
   try {
     const { name, base64 } = req.body;
@@ -51,7 +48,7 @@ app.post("/upload", async (req, res) => {
 
     uploadStream.once("finish", () => {
       res.status(201).json({
-        message: "Car added successfully",
+        message: "Image added successfully",
         fileId: uploadStream.id,
       });
     });
