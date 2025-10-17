@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ALL_IMAGES = import.meta.env.VITE_IMAGES
+const ALL_IMAGES = import.meta.env.VITE_IMAGES;
 
 export default function ShowCars() {
   const [cars, setCars] = useState([]);
@@ -12,6 +12,7 @@ export default function ShowCars() {
       .then((data) => {
         setCars(data);
         setLoading(false);
+        console.log(data);
       })
       .catch((err) => {
         console.error("Error fetching data:", err);
@@ -19,33 +20,63 @@ export default function ShowCars() {
       });
   }, []);
 
-  if (loading) return <h2 className="w-full h-screen flex items-center justify-center">Loading data...</h2>;
+  const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this image?")) return;
+    
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SINGLE_IMAGE}/${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Delete failed");
+      }
+
+      setCars((prevCars) => prevCars.filter((car) => car._id !== id));
+      alert(data.message); // optional
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("Error deleting image!");
+    }
+  };
+
+  if (loading)
+    return (
+      <h2 className="w-full h-screen flex items-center justify-center text-3xl">
+        Loading data...
+      </h2>
+    );
 
   return (
     <div className="container mx-auto p-10">
       <h1 className="text-center font-bold text-5xl text-orange-600 mb-10 uppercase">
-        Car List
+        Images List
       </h1>
 
       {cars.length === 0 ? (
-        <p className="text-center text-2xl mt-5 font-semibold">
-          No cars found. . . . 😢
-        </p>
+        <p className="text-center text-2xl mt-5 font-semibold">No Images found 😢</p>
       ) : (
         <ul className="grid grid-cols-3 gap-5 justify-center">
-          {cars.map((car) => (
-            <li
-              key={car._id}
-              className="border-2 border-amber-600 rounded-lg p-3 text-center"
-            >
-              <strong className="block mb-2">{car.filename}</strong>
-              <img
-                src={`${import.meta.env.VITE_SINGLE_IMAGE}/${car._id}`}
-                alt={car.filename}
-                className="w-full h-64 object-contain rounded-md shadow-md"
-              />
-            </li>
-          ))}
+          {cars
+            .slice()
+            .reverse()
+            .map((car) => (
+              <li
+                key={car._id}
+                className="border-2 border-amber-600 rounded-lg p-3 text-center"
+              >
+                <strong className="block mb-2">{car.filename}</strong>
+                <img
+                  src={`${import.meta.env.VITE_SINGLE_IMAGE}/${car._id}`}
+                  className="w-full h-64 object-contain rounded-md shadow-md"
+                />
+                <button
+                  className="my-5 px-7 py-1 border-2 border-amber-600 text-lg font-bold rounded-sm cursor-pointer"
+                  onClick={() => handleDelete(car._id)}>Delete</button>
+              </li>
+            ))}
         </ul>
       )}
     </div>

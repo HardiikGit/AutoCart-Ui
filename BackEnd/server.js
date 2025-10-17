@@ -5,18 +5,19 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// const allowedOrigins = ["https://auto-cart-ui.vercel.app"];
 app.use(
   cors({
-    // origin: true,
-    methods: ["GET", "POST"],
+    origin: ["http://localhost:5174"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
 // --- Body parser ---
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ extended: true, limit: "100mb" }));
+app.use(cors());
 
 // --- MongoDB setup ---
 const mongoURI =
@@ -112,8 +113,9 @@ app.delete("/file/:id", async (req, res) => {
 
     res.json({ message: `File '${file.filename}' deleted successfully!` });
   } catch (err) {
-    console.error("❌ Delete Error:", err);
+    console.error("Delete Error:", err);
     res.status(400).json({ error: "Invalid File ID or delete failed" });
+    alert("Error deleting car!");
   }
 });
 
