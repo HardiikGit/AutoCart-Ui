@@ -45,7 +45,7 @@ function ShowImages() {
 
   if (loading)
     return (
-      <h2 className="w-full h-screen flex items-center justify-center text-3xl">
+      <h2 className="w-full h-screen flex items-center justify-center text-3xl text-white">
         Loading data...
       </h2>
     );
