@@ -1,0 +1,1 @@
+(cd FrontEnd && npm run dev &) && (cd BackEnd && npm run dev &) && (cd BackEnd && node server.js)
