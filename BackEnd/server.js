@@ -22,7 +22,7 @@ const mongoURI =
 const dbName = "AutoCart";
 let db, bucket;
 
-MongoClient.connect(mongoURI, { useUnifiedTopology: true })
+MongoClient.connect(mongoURI)
   .then((client) => {
     db = client.db(dbName);
     bucket = new GridFSBucket(db, { bucketName: "AutoParts" });
