@@ -13,7 +13,7 @@ sleep 1
 
 echo
 echo "Pushing to repository..."
-git push origin main
+git push origin Linux
 sleep 1
 
 echo
