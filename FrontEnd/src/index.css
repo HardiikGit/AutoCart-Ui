@@ -35,6 +35,10 @@ ol {
   list-style: none;
   font-family: var(--font-family);
 }
+::selection {
+  background: var(--orange-color);
+  color: var(--white-color);
+}
 .swiper-pagination-bullet {
   background: var(--orange-color) !important;
 }
