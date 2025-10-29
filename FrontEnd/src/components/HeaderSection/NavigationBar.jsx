@@ -1,11 +1,11 @@
 import { CiUser } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
-
 import Logo from '/Logo.png'
 import NextNavigationBar from "./NavigationBar2";
-function NavigationBarSection() {
 
+
+function NavigationBarSection() {
    return (
       <>
          <nav className="NavigationBar" style={{ padding: "20px 0px" }}>
@@ -30,7 +30,7 @@ function NavigationBarSection() {
                               </a>
                            </div>
                            <div className="CartPage">
-                              <a href="" className="d-flex align-items-center">
+                              <a href='#' className="d-flex align-items-center">
                                  <div className="CartIcon">
                                     <CiShoppingCart />
                                  </div>
