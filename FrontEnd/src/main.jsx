@@ -3,9 +3,12 @@ import { BrowserRouter } from 'react-router'
 import './index.css'
 import './theme.css'
 import App from './App.jsx'
+import { StrictMode } from 'react'
 
 createRoot(document.getElementById('root')).render(
+  <StrictMode>
   <BrowserRouter>
     <App />
-  </BrowserRouter>
+    </BrowserRouter>
+    </StrictMode>
 )

@@ -4,9 +4,11 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { CiStar } from "react-icons/ci";
 import { API_GET } from "../config";
 import { useState } from "react";
+import { useCart } from "../Hooks/AddToCart";
 
 function TrendingProductsSlider() {
    const [tabSwitch, setTabSwitch] = useState(0)
+   const { addToCart } = useCart()
 
    const tabs = [
       {
@@ -70,7 +72,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Thinkware', name: 'Thinkware F770 2CH FHD Wi-Fi Dash Camera', image: '68cce2454a5faa54d3101e94', Price: '$86.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
