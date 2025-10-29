@@ -28,6 +28,11 @@ function NextNavigationBar() {
          window.removeEventListener("scroll", handleScroll)
       }
    })
+   useEffect(() => {
+      let block = document.querySelector('.Cart-Link')
+
+      
+   })
 
    const buttonStyle = {
       background: "none",
@@ -53,37 +58,37 @@ function NextNavigationBar() {
                            <div className={category ? "active" : "Category"} style={{ position: 'absolute', top: '70px', left: '0', zIndex: '999', background: 'var(--white-color)', display: 'none', width: '100%', }}>
                               <ul className="CatList">
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Our Store</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Our Store</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Ammeter</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Ammeter</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Break Parts</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Break Parts</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Engine</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Engine</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Spark Plug</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Spark Plug</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Headlights</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Headlights</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Caliper</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>Caliper</a>
                                  </li>
                                  <li className="List_Items" style={{ border: '1px solid #00000023' }}>
-                                    <a href="" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>More Categories</a>
+                                    <a href="/" style={{ color: 'var(--black-color)', padding: '10px 20px', fontSize: '16px', fontWeight: '600' }}>More Categories</a>
                                  </li>
                               </ul>
                            </div>
                         </li>
                         <li className="ListLinks">
-                           <a href="" style={{ fontWeight: '700', color: 'var(--white-color)' }}>Home</a>
+                           <a href="/" style={{ fontWeight: '700', color: 'var(--white-color)' }}>Home</a>
                         </li>
                         <li className="ListLinks">
-                           <a href="" style={{ gap: '3px', fontWeight: '700', color: 'var(--white-color)' }} className="d-flex align-items-center relative" onMouseEnter={() => setHover(true)}
+                           <a href="/" style={{ gap: '3px', fontWeight: '700', color: 'var(--white-color)' }} className="d-flex align-items-center relative" onMouseEnter={() => setHover(true)}
                               onMouseLeave={() => setHover(false)}>Shop <MdOutlineKeyboardArrowDown /></a>
                            {hover && (
                               <div className="DropDownShop d-flex absolute" style={{ padding: '20px', background: 'var(--white-color)', top: '35px', zIndex: '999', gap: '20px', }}
@@ -93,48 +98,48 @@ function NextNavigationBar() {
                                  <div className="FerrariParts">
                                     <div className="partsHeading" style={{ marginBottom: '15px' }}>
                                        <h4>
-                                          <a href="" style={{ fontSize: '16px', fontWeight: '700', color: 'var(--black-color)' }}>Ferrari Wheel</a>
+                                          <a href="/" style={{ fontSize: '16px', fontWeight: '700', color: 'var(--black-color)' }}>Ferrari Wheel</a>
                                        </h4>
                                     </div>
                                     <div className="PartsList-fl">
                                        <ul className="PartsList d-flex flexcolumn" style={{ gap: '10px' }}>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Alloy Wheels</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Forged Wheels</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Retro Polka</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Steel Wheels</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Camshaft</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Alloy Wheels</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Forged Wheels</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Retro Polka</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Steel Wheels</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Camshaft</a></li>
                                        </ul>
                                     </div>
                                  </div>
                                  <div className="GearOil">
                                     <div className="partsHeading" style={{ marginBottom: '15px' }}>
                                        <h4>
-                                          <a href="" style={{ fontSize: '16px', fontWeight: '700', color: 'var(--black-color)' }}>Gear Oil</a>
+                                          <a href="/" style={{ fontSize: '16px', fontWeight: '700', color: 'var(--black-color)' }}>Gear Oil</a>
                                        </h4>
                                     </div>
                                     <div className="PartsList-fl">
                                        <ul className="PartsList d-flex flexcolumn" style={{ gap: '10px' }}>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Airbags Sensor</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Coolant</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Proximity Sensor</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Suspension Sensor</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Bra  ke Fluid</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Airbags Sensor</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Coolant</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Proximity Sensor</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Suspension Sensor</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Bra  ke Fluid</a></li>
                                        </ul>
                                     </div>
                                  </div>
                                  <div className="seatCover">
                                     <div className="partsHeading" style={{ marginBottom: '15px' }}>
                                        <h4>
-                                          <a href="" style={{ fontSize: '16px', fontWeight: '700', color: 'var(--black-color)' }}>Seat Cover</a>
+                                          <a href="/" style={{ fontSize: '16px', fontWeight: '700', color: 'var(--black-color)' }}>Seat Cover</a>
                                        </h4>
                                     </div>
                                     <div className="PartsList-fl">
                                        <ul className="PartsList d-flex flexcolumn" style={{ gap: '10px' }}>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Car Seats</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Fuel</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Gear Box</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Steering Parts</a></li>
-                                          <li className="Parts"><a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Lubricant</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Car Seats</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Fuel</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Gear Box</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Steering Parts</a></li>
+                                          <li className="Parts"><a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Lubricant</a></li>
                                        </ul>
                                     </div>
                                  </div>
@@ -142,10 +147,10 @@ function NextNavigationBar() {
                            )}
                         </li>
                         <li className="ListLinks">
-                           <a href="" style={{ fontWeight: '700', color: 'var(--white-color)' }}>Collections</a>
+                           <a href="/" style={{ fontWeight: '700', color: 'var(--white-color)' }}>Collections</a>
                         </li>
                         <li className="ListLinks">
-                           <a href="" style={{ gap: '3px', fontWeight: '700', color: 'var(--white-color)' }} className="d-flex align-items-center relative" onMouseEnter={() => setHover2(true)}
+                           <a href="/" style={{ gap: '3px', fontWeight: '700', color: 'var(--white-color)' }} className="d-flex align-items-center relative" onMouseEnter={() => setHover2(true)}
                               onMouseLeave={() => setHover2(false)}>Headlights <MdOutlineKeyboardArrowDown /></a>
                            {hover2 && (
                               <div className="DropDownShop d-flex absolute" style={{ padding: '20px', background: 'var(--white-color)', top: '35px', zIndex: '9999', gap: '20px', }}
@@ -154,16 +159,16 @@ function NextNavigationBar() {
                                  <div className="HeadLightParts">
                                     <ul className="PartsList d-flex flexcolumn" style={{ gap: '10px' }}>
                                        <li className="Parts">
-                                          <a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Bumpers</a>
+                                          <a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Bumpers</a>
                                        </li>
                                        <li className="Parts">
-                                          <a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Dash Cam</a>
+                                          <a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Dash Cam</a>
                                        </li>
                                        <li className="Parts">
-                                          <a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Grills</a>
+                                          <a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Grills</a>
                                        </li>
                                        <li className="Parts">
-                                          <a href="" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Headlight</a>
+                                          <a href="/" style={{ color: 'var(--black-color)', fontSize: '14px', fontWeight: '500' }}>Headlight</a>
                                        </li>
                                     </ul>
                                  </div>
@@ -171,7 +176,7 @@ function NextNavigationBar() {
                            )}
                         </li>
                         <li className="ListLinks">
-                           <a href="" style={{ gap: '3px', fontWeight: '700', color: 'var(--white-color)' }} className="d-flex align-items-center relative">More <MdOutlineKeyboardArrowDown />
+                           <a href="/" style={{ gap: '3px', fontWeight: '700', color: 'var(--white-color)' }} className="d-flex align-items-center relative">More <MdOutlineKeyboardArrowDown />
                            </a>
                         </li>
                      </ul>
@@ -230,7 +235,7 @@ function NextNavigationBar() {
                            </ul>
                            <div className="HelpCenter" style={{ display: 'block', marginTop: '30px' }}>
                               <p>Need Help?</p>
-                              <a href="">9876-543-210</a>
+                              <a href="/">9876-543-210</a>
                            </div>
                         </div>
                      </div>
@@ -255,13 +260,13 @@ function NextNavigationBar() {
                               >
                                  <ul className="currencyDownBox d-flex flexcolumn" style={{ gap: "5px" }}>
                                     <li className="downBox">
-                                       <a href="">CAD $ | Canada</a>
+                                       <a href="/">CAD $ | Canada</a>
                                     </li>
                                     <li className="downBox">
-                                       <a href="">Euro | France</a>
+                                       <a href="/">Euro | France</a>
                                     </li>
                                     <li className="downBox">
-                                       <a href="">USD $ | United States</a>
+                                       <a href="/">USD $ | United States</a>
                                     </li>
                                  </ul>
                               </div>
@@ -282,13 +287,13 @@ function NextNavigationBar() {
                               <div className={`dropDown1 ${(show && show == 2) ? "show" : "none"}`}>
                                  <ul className="currencyDownBox d-flex flexcolumn" style={{ gap: "5px" }}>
                                     <li className="downBox">
-                                       <a href="">English</a>
+                                       <a href="/">English</a>
                                     </li>
                                     <li className="downBox">
-                                       <a href="">Nederlands</a>
+                                       <a href="/">Nederlands</a>
                                     </li>
                                     <li className="downBox">
-                                       <a href="">Francias</a>
+                                       <a href="/">Francias</a>
                                     </li>
                                  </ul>
                               </div>
@@ -299,8 +304,9 @@ function NextNavigationBar() {
                   </div>
                </div>
                <div className="col-lg-3">
-                  <div className="WeeklyDeal d-flex justify-content-end">
-                     <a href="" className="d-flex align-items-center" style={{ gap: '3px', fontSize: '18px', fontWeight: '700', color: 'var(--white-color)' }}>
+                  <div className="WeeklyDeal d-flex justify-content-end" style={{ gap: '15px' }}>
+                     <Link to="/cartproducts" className="Cart-Link" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}>My Cart</Link>
+                     <a href="/" className="d-flex align-items-center" style={{ gap: '3px', fontSize: '18px', fontWeight: '700', color: 'var(--white-color)' }}>
                         <BiSolidOffer /> Weekly Deal
                      </a>
                   </div>

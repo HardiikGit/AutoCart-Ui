@@ -31,7 +31,7 @@ function TopHeaderSection() {
                         <span style={{ textTransform: "uppercase", fontWeight: "500" }}>
                            Get25Off - { }
                         </span>
-                        <a href="" style={{ textDecoration: "underline" }}>
+                        <a href="/" style={{ textDecoration: "underline" }}>
                            SHOP NOW
                         </a>
                      </p>
@@ -41,10 +41,10 @@ function TopHeaderSection() {
                   <div className="topContent">
                      <ul className="topSlideShow d-flex justify-content-end align-items-center">
                         <li className="slideShow-items">
-                           <a href="">Track Order</a>
+                           <a href="/">Track Order</a>
                         </li>
                         <li className="slideShow-items" style={borderStyle}>
-                           <a href="">Help Center</a>
+                           <a href="/">Help Center</a>
                         </li>
                         <li className="slideShow-items relative" style={rightBorder}>
                            <div className="currencyButton">
@@ -64,13 +64,13 @@ function TopHeaderSection() {
                            >
                               <ul className="currencyDownBox d-flex flexcolumn" style={{ gap: "5px" }}>
                                  <li className="downBox">
-                                    <a href="">CAD $ | Canada</a>
+                                    <a href="/">CAD $ | Canada</a>
                                  </li>
                                  <li className="downBox">
-                                    <a href="">Euro | France</a>
+                                    <a href="/">Euro | France</a>
                                  </li>
                                  <li className="downBox">
-                                    <a href="">USD $ | United States</a>
+                                    <a href="/">USD $ | United States</a>
                                  </li>
                               </ul>
                            </div>
@@ -91,13 +91,13 @@ function TopHeaderSection() {
                            <div className={`dropDown1 ${(show && show == 2) ? "show" : "none"}`}>
                               <ul className="currencyDownBox d-flex flexcolumn" style={{ gap: "5px" }}>
                                  <li className="downBox">
-                                    <a href="">English</a>
+                                    <a href="/">English</a>
                                  </li>
                                  <li className="downBox">
-                                    <a href="">Nederlands</a>
+                                    <a href="/">Nederlands</a>
                                  </li>
                                  <li className="downBox">
-                                    <a href="">Francias</a>
+                                    <a href="/">Francias</a>
                                  </li>
                               </ul>
                            </div>

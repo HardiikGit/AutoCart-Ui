@@ -72,7 +72,7 @@ img,
   color: var(--orange-color) !important;
 }
 .CartCount p {
-  font-size: 14px;
+  font-size: 12px;
 }
 .SearchInput {
   width: 80%;
@@ -93,6 +93,7 @@ img,
   position: absolute;
   top: 0;
   font-size: 10px;
+  transition: all ease-in 0.5s;
 }
 .InputButton {
   height: 100%;
@@ -189,4 +190,7 @@ img,
 }
 .Social-links a:hover {
   color: var(--black-color) !important;
+}
+.Cart {
+  display: block !important;
 }

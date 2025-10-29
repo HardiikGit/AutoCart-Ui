@@ -66,12 +66,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -100,12 +100,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -134,12 +134,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -168,12 +168,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -202,12 +202,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -236,12 +236,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -270,12 +270,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />
@@ -304,12 +304,12 @@ function LatestSlider() {
                 </div>
                 <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                   <div className="PartName">
-                    <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                    <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                       <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                     </a>
                   </div>
                   <div className="PartReview">
-                    <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                    <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                       <CiStar />
                       <CiStar />
                       <CiStar />

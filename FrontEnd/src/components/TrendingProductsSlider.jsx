@@ -46,19 +46,16 @@ function TrendingProductsSlider() {
                      <div className="BodyPartCard" style={{ width: '200px', height: '200px', margin: '0 auto' }}>
                         <img src={`${API_GET}/${'68cbb916f8d48ccf362bd4a0'}`} className="img-contain" alt="Projector" />
                      </div>
-                     <div className="Other absolute" style={{ opacity: '0', top: '10px', left: '0', right: '0', width: '200px', height: '200px', margin: '0 auto', transition: 'all ease-in-out 0.5s' }}>
-                        <img src={`${API_GET}/${'68cce2454a5faa54d3101e94'}`} className="img-contain" alt="HoverImage" />
-                     </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Thinkware F770 2CH FHD Wi-Fi Dash Camera
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -72,7 +69,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }} onClick={() => addToCart({ id: 'Thinkware', name: 'Thinkware F770 2CH FHD Wi-Fi Dash Camera', image: '68cce2454a5faa54d3101e94', Price: '$86.00' })}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Thinkware', name: 'Thinkware F770 2CH FHD Wi-Fi Dash Camera', image: `${API_GET}/${'68cbb916f8d48ccf362bd4a0'}`, Price: '$86.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -87,12 +84,12 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -106,7 +103,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Upgraded', name: 'New Upgraded 1-Piece Rear Driveshaft & Parts', image: `${API_GET}/${'68cbf4b8ea608757bdcaee90'}`, Price: '$21.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -121,12 +118,12 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>Black Yellow Wheel Cover 13 Inch For Four-Wheel</h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -140,7 +137,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Black Wheel', name: 'Black Yellow Wheel Cover 13 Inch For Four-Wheel', image: `${API_GET}/${'68cbb864f8d48ccf362bd49c'}`, Price: '$199.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -155,14 +152,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  OMP Car Steering Aluminum Spacer Steering
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -176,7 +173,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'OMP Car', name: 'OMP Car Steering Aluminum Spacer Steering', image: `${API_GET}/${'68cbb8d3f8d48ccf362bd49e'}`, Price: '$56.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -191,14 +188,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Alternator Bosch Fits Fordd Hollanndd Models
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -207,12 +204,12 @@ function TrendingProductsSlider() {
                            </a>
                         </div>
                         <div className="PartPrice">
-                           <p style={{ color: 'var(--orange-color)', fontSize: '16px', fontWeight: '700' }}>$56.00</p>
+                           <p style={{ color: 'var(--orange-color)', fontSize: '16px', fontWeight: '700' }}>$69.00</p>
                         </div>
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Alternator Bosch', name: 'Alternator Bosch Fits Fordd Hollanndd Models', image: `${API_GET}/${'68cbb98bf8d48ccf362bd4a2'}`, Price: '$69.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -227,14 +224,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Autoparts LED Black Projector Headlights
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -248,7 +245,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Autoparts LED', name: 'Autoparts LED Black Projector Headlights', image: `${API_GET}/${'68ccdf814a5faa54d3101e90'}`, Price: '$47.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -263,14 +260,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Savini Forged SV64-XC Wheels Rims On Sale
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -284,7 +281,7 @@ function TrendingProductsSlider() {
                         <div className="CartBox">
                            <button className="CartButton" style={{
                               fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                           }}>Add to Cart</button>
+                           }} onClick={() => addToCart({ id: 'Savini Forged', name: 'Savini Forged SV64-XC Wheels Rims On Sale', image: `${API_GET}/${'68cd138e5050338095e422f7'}`, Price: '$50.00' })}>Add to Cart</button>
                         </div>
                      </div>
                   </div>
@@ -333,12 +330,12 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -367,12 +364,12 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>Black Yellow Wheel Cover 13 Inch For Four-Wheel</h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -401,14 +398,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  OMP Car Steering Aluminum Spacer Steering
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -437,14 +434,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Thinkware F770 2CH FHD Wi-Fi Dash Camera
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -473,14 +470,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Alternator Bosch Fits Fordd Hollanndd Models
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -509,14 +506,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Autoparts LED Black Projector Headlights
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -545,14 +542,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Savini Forged SV64-XC Wheels Rims On Sale
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -615,14 +612,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  OMP Car Steering Aluminum Spacer Steering
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -651,12 +648,12 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>Black Yellow Wheel Cover 13 Inch For Four-Wheel</h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -685,12 +682,12 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>New Upgraded 1-Piece Rear Driveshaft & Parts</h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -719,14 +716,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Thinkware F770 2CH FHD Wi-Fi Dash Camera
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -755,14 +752,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Alternator Bosch Fits Fordd Hollanndd Models
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -791,14 +788,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Savini Forged SV64-XC Wheels Rims On Sale
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />
@@ -827,14 +824,14 @@ function TrendingProductsSlider() {
                      </div>
                      <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
                         <div className="PartName">
-                           <a href="" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
+                           <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
                               <h4 style={{ fontSize: '16px', fontWeight: '500' }}>
                                  Autoparts LED Black Projector Headlights
                               </h4>
                            </a>
                         </div>
                         <div className="PartReview">
-                           <a href="" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
+                           <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
                               <CiStar />
                               <CiStar />
                               <CiStar />

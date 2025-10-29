@@ -3,6 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import Logo from '/Logo.png'
 import NextNavigationBar from "./NavigationBar2";
+import { Link } from "react-router-dom";
 
 
 function NavigationBarSection() {
@@ -14,35 +15,32 @@ function NavigationBarSection() {
                   <div className="col-lg-3 col-md-3 col-sm-12">
                      <div className="LogoSection d-flex align-items-center justify-space-between">
                         <div className="Logo">
-                           <a href="">
+                           <a href="/">
                               <img src={Logo} className='img-cover' alt="" />
                            </a>
                         </div>
                         <div className="QuickLinks2 d-flex align-items-center justify-content-end d-none" style={{ gap: "15px" }}>
                            <div className="UserLogin">
-                              <a href="">
+                              <a href="/">
                                  <CiUser />
                               </a>
                            </div>
                            <div className="WishList">
-                              <a href="">
+                              <a href="/">
                                  <CiHeart />
                               </a>
                            </div>
                            <div className="CartPage">
-                              <a href='#' className="d-flex align-items-center">
+                              <Link to='/cartproducts' className="d-flex align-items-center">
                                  <div className="CartIcon">
                                     <CiShoppingCart />
                                  </div>
                                  <div className="CartCount">
                                     <p className="d-flex flexcolumn">
-                                       $0.00
-                                       <b>
-                                          My Cart
-                                       </b>
+                                       My Cart
                                     </p>
                                  </div>
-                              </a>
+                              </Link>
                            </div>
                         </div>
                      </div>
@@ -52,40 +50,36 @@ function NavigationBarSection() {
                         <div className="SearchInput d-flex align-items-center hidden">
                            <input type="search" placeholder='Search' minLength={1} maxLength={100} />
                            <button className="InputButton" style={{ textTransform: 'uppercase' }}>Search</button>
-                           <h1>{name}</h1>
                         </div>
                         <div className="HelpCenter">
                            <p>Need Help?</p>
-                           <a href="">9876-543-210</a>
+                           <a href="/">9876-543-210</a>
                         </div>
                      </div>
                   </div>
                   <div className="col-lg-3 col-md-3 col-sm-12">
                      <div className="QuickLinks d-flex align-items-center justify-content-end" style={{ gap: "15px" }}>
                         <div className="UserLogin">
-                           <a href="">
+                           <a href="/">
                               <CiUser />
                            </a>
                         </div>
                         <div className="WishList">
-                           <a href="">
+                           <a href="/">
                               <CiHeart />
                            </a>
                         </div>
                         <div className="CartPage">
-                           <a href="" className="d-flex align-items-center">
+                           <Link to="/cartproducts" className="d-flex align-items-center">
                               <div className="CartIcon">
                                  <CiShoppingCart />
                               </div>
                               <div className="CartCount">
                                  <p className="d-flex flexcolumn">
-                                    $0.00
-                                    <b>
-                                       My Cart
-                                    </b>
+                                    My Cart
                                  </p>
                               </div>
-                           </a>
+                           </Link>
                         </div>
                      </div>
                   </div>
