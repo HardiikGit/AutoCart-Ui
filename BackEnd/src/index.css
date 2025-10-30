@@ -1,9 +1,0 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-@import "tailwindcss";
-html,
-body {
-  font-family: "Quicksand", sans-serif;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  position: relative;
-}
