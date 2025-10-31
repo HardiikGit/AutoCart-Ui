@@ -42,10 +42,10 @@ function ViewProduct() {
           {products.length > 0 ? (
             products.map((product) => (
               <div
-                className="col-lg-3 col-md-4 col-sm-6 mb-4"
+                className="col-lg-3 col-md-5 col-sm-12"
                 key={product._id}
               >
-                <div className="card text-center p-3 shadow-sm">
+                <div className="card text-center">
                   <img
                     src={`${VIEW_IMAGE}/${product.imageId}`}
                     alt={product.name}

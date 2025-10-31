@@ -40,6 +40,9 @@ function TopHeaderSection() {
                <div className="col-lg-6">
                   <div className="topContent">
                      <ul className="topSlideShow d-flex justify-content-end align-items-center">
+                        <li className="slideShow-items" style={{ borderRight: '1px solid #000' }}>
+                           <Link to="/backend">Dashboard</Link>
+                        </li>
                         <li className="slideShow-items">
                            <a href="/">Track Order</a>
                         </li>
