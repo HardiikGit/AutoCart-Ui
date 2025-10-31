@@ -53,6 +53,9 @@
   .Slider-L {
     margin-top: 20px;
   }
+  .Cart-Link {
+    height: 20px;
+  }
 }
 @media (max-width: 567px) {
   .MainBannerSection {
@@ -91,8 +94,5 @@
   }
   .WrapperBox {
     flex-direction: unset;
-  }
-  .Cart-Link {
-    height: 20px;
   }
 }
