@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../../Hooks/CartContext"
 import { CiStar } from "react-icons/ci";
+import { FaArrowLeftLong } from 'react-icons/fa6';
 
 function CartProducts() {
 
@@ -10,7 +12,12 @@ function CartProducts() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="d-flex" style={{ gap: '15px', padding: '20px' }}>
+            <div className="Cart-Heading">
+              <Link to="/" className="BackArrow">
+                <FaArrowLeftLong />
+              </Link>
+            </div>
+            <div className="Cart-Products d-flex">
               {cart.map((data, index) => (
                 <div key={data.id} className="BodyCard" style={{ border: '1px solid #00000039', cursor: 'pointer', height: 'unset', width: '300px' }}>
                   <div className="BodyPartCard" style={{ width: '200px', height: '200px', margin: '0 auto' }}>

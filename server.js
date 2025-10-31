@@ -13,7 +13,7 @@ app.use(
 );
 
 // --- Body parser ---
-app.use(express.json({ limit: "100mb" }));~
+app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
 // --- MongoDB setup ---
@@ -30,32 +30,42 @@ MongoClient.connect(mongoURI)
   })
   .catch((err) => console.error(err));
 
-// --- Routes ---
-
-// Upload car image POST METHOD
-app.post("/upload", async (req, res) => {
+// Add Product
+app.post("/add-product", async (req, res) => {
   try {
-    const { name, base64 } = req.body;
+    const { name, price, base64 } = req.body;
 
-    if (!name || !base64) {
-      return res.status(400).json({ error: "Name and base64 required" });
+    if (!name || !price || !base64) {
+      return res
+        .status(400)
+        .json({ error: "Product name, price and image (base64) required" });
     }
 
     const buffer = Buffer.from(base64, "base64");
     const uploadStream = bucket.openUploadStream(name);
-
     uploadStream.end(buffer);
 
-    uploadStream.once("finish", () => {
+    uploadStream.once("finish", async () => {
+      const fileId = uploadStream.id;
+
+      // Insert product in Products collection
+      const result = await db.collection("Products").insertOne({
+        name,
+        price: parseFloat(price),
+        imageId: fileId,
+        createdAt: new Date(),
+      });
+
       res.status(201).json({
-        message: "Image added successfully",
-        fileId: uploadStream.id,
+        message: "Product added successfully!",
+        productId: result.insertedId,
+        imageId: fileId,
       });
     });
 
     uploadStream.once("error", (err) => {
-      console.error(err);
-      res.status(500).json({ error: "Upload failed" });
+      console.error("Upload error:", err);
+      res.status(500).json({ error: "Image upload failed" });
     });
   } catch (err) {
     console.error(err);
@@ -63,7 +73,62 @@ app.post("/upload", async (req, res) => {
   }
 });
 
-// Get all cars (files)
+// GET all Products
+app.get("/products", async (req, res) => {
+  try {
+    const products = await db.collection("Products").find({}).toArray();
+    res.json(products);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// GET single Product with Image
+app.get("/product/:id", async (req, res) => {
+  try {
+    const productId = new ObjectId(req.params.id);
+    const product = await db.collection("Products").findOne({ _id: productId });
+
+    if (!product) return res.status(404).json({ error: "Product not found" });
+
+    const fileId = product.imageId;
+    const file = await db
+      .collection("AutoParts.files")
+      .findOne({ _id: fileId });
+
+    if (!file) return res.status(404).json({ error: "Image not found" });
+
+    res.set("Content-Type", file.contentType || "image/png");
+    bucket.openDownloadStream(fileId).pipe(res);
+  } catch (err) {
+    console.error(err);
+    res.status(400).json({ error: "Invalid Product ID" });
+  }
+});
+
+// Delete Product (and its image)
+app.delete("/product/:id", async (req, res) => {
+  try {
+    const productId = new ObjectId(req.params.id);
+    const product = await db.collection("Products").findOne({ _id: productId });
+
+    if (!product) return res.status(404).json({ error: "Product not found" });
+
+    // Delete image from GridFS
+    await bucket.delete(product.imageId);
+
+    // Delete product from collection
+    await db.collection("Products").deleteOne({ _id: productId });
+
+    res.json({ message: "🗑️ Product and image deleted successfully" });
+  } catch (err) {
+    console.error("Delete Error:", err);
+    res.status(400).json({ error: "Invalid Product ID or delete failed" });
+  }
+});
+
+// Existing routes kept for images
 app.get("/files", async (req, res) => {
   try {
     const files = await db.collection("AutoParts.files").find({}).toArray();
@@ -74,7 +139,6 @@ app.get("/files", async (req, res) => {
   }
 });
 
-// Get single car image by ID
 app.get("/file/:id", async (req, res) => {
   try {
     const fileId = new ObjectId(req.params.id);
@@ -95,24 +159,17 @@ app.get("/file/:id", async (req, res) => {
 app.delete("/file/:id", async (req, res) => {
   try {
     const fileId = new ObjectId(req.params.id);
-
-    // Find file by ID in GridFS metadata
     const file = await db
       .collection("AutoParts.files")
       .findOne({ _id: fileId });
 
-    if (!file) {
-      return res.status(404).json({ error: "File not found" });
-    }
+    if (!file) return res.status(404).json({ error: "File not found" });
 
-    // Delete file from GridFS (both files + chunks)
     await bucket.delete(fileId);
-
     res.json({ message: `File '${file.filename}' deleted successfully!` });
   } catch (err) {
     console.error("Delete Error:", err);
     res.status(400).json({ error: "Invalid File ID or delete failed" });
-    alert("Error deleting car!");
   }
 });
 

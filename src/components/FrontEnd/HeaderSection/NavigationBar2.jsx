@@ -17,14 +17,17 @@ function NextNavigationBar() {
 
    useEffect(() => {
       const block = document.querySelector('.Cart-Link');
+      const block1 = document.querySelector('.Cart-Link-1');
       const handleScroll = () => {
          if (window.scrollY > 180) {
             setIsSticky(true)
             block.classList.add('Cart');
+            block1.classList.add('Cart')
          }
          else {
             setIsSticky(false)
             block.classList.remove('Cart');
+            block1.classList.add('Cart')
          }
       }
       window.addEventListener("scroll", handleScroll)
@@ -243,7 +246,7 @@ function NextNavigationBar() {
                      <div className="topContent">
                         <ul className="topSlideShow-1 d-flex justify-content-end align-items-center">
                            <li className="slideShow-items relative" style={rightBorder}>
-                              <Link to="/cartproducts" className="Cart-Link" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}><CiShoppingCart /></Link>
+                              <Link to="/cartproducts" className="Cart-Link-1" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}><CiShoppingCart /></Link>
                            </li>
                            <li className="slideShow-items relative" style={rightBorder}>
                               <div className="currencyButton">
@@ -308,7 +311,7 @@ function NextNavigationBar() {
                </div>
                <div className="col-lg-3">
                   <div className="WeeklyDeal d-flex justify-content-end" style={{ gap: '15px' }}>
-                     <Link to="/cartproducts" className="Cart-Link" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}>My Cart</Link>
+                     <Link to="/cartproducts" className="Cart-Link" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}><CiShoppingCart /></Link>
                      <a href="/" className="d-flex align-items-center" style={{ gap: '3px', fontSize: '18px', fontWeight: '700', color: 'var(--white-color)' }}>
                         <BiSolidOffer /> Weekly Deal
                      </a>

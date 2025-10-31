@@ -12,7 +12,7 @@ function App() {
   return (
     <CartProvider>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path='/test' element={<TestPages />} />
         <Route path='/cartproducts' element={<CartPage />} />

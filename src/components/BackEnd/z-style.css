@@ -224,12 +224,11 @@
 
 /* Button */
 .submit-btn {
-  margin-top: 20px;
   border: 2px solid #d97706;
   background-color: transparent;
   padding: 14px 0;
   font-size: 18px;
-
+  font-weight: 500;
   border-radius: 4px;
   transition: all 0.3s ease;
   width: 180px;
@@ -239,4 +238,15 @@
 .submit-btn:hover {
   background-color: #d97706;
   color: #fff;
+}
+.All-Products {
+  margin-bottom: 40px;
+}
+.Product-name {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0px 5px 0px;
+}
+.Product-price {
+  font-size: 16px;
 }

@@ -45,7 +45,7 @@ function ShowImages() {
 
   if (loading)
     return (
-      <h2 className="loading-text d-flex align-items-center jusitfy-content-center">Loading data...</h2>
+      <h2 className="loading-text text-center">Loading data...</h2>
     );
 
   return (
@@ -61,7 +61,7 @@ function ShowImages() {
             .reverse()
             .map((car) => (
               <li key={car._id} className="image-card">
-                <strong className="block">Image _id :- {car._id}</strong>
+                <strong style={{ display: 'block', marginBottom: '5px' }}>Image _id :- {car._id}</strong>
                 <strong>Image Name :- {car.filename}</strong>
                 <img
                   src={`${import.meta.env.VITE_SINGLE_IMAGE}/${car._id}`}
