@@ -26,7 +26,7 @@ function LatestSlider() {
       </div>
       <div className="col-lg-9">
         <div onMouseEnter={() => swiperStop.current.autoplay.stop()}
-          onMouseLeave={() => swiperStop.current.autoplay.start()}>
+          onMouseLeave={() => swiperStop.current.autoplay.start()} className='Slider-L'>
           <Swiper className='mySwiper margin0'
             modules={[Autoplay, Navigation]}
             autoplay={{ delay: 2000, disableOnInteraction: false }}

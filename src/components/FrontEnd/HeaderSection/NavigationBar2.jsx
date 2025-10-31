@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { CiShoppingCart } from "react-icons/ci";
 
 function NextNavigationBar() {
    const [category, setCategory] = useState(false)
@@ -241,6 +242,9 @@ function NextNavigationBar() {
 
                      <div className="topContent">
                         <ul className="topSlideShow-1 d-flex justify-content-end align-items-center">
+                           <li className="slideShow-items relative" style={rightBorder}>
+                              <Link to="/cartproducts" className="Cart-Link" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}><CiShoppingCart /></Link>
+                           </li>
                            <li className="slideShow-items relative" style={rightBorder}>
                               <div className="currencyButton">
                                  <button

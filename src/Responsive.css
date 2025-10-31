@@ -46,6 +46,13 @@
   .Login {
     width: 100% !important;
   }
+  .WrapperBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .Slider-L {
+    margin-top: 20px;
+  }
 }
 @media (max-width: 567px) {
   .MainBannerSection {
@@ -81,5 +88,11 @@
   }
   .Responsive_Navigation {
     width: 100% !important;
+  }
+  .WrapperBox {
+    flex-direction: unset;
+  }
+  .Cart-Link {
+    height: 20px;
   }
 }
