@@ -1,0 +1,14 @@
+// FRONTEND IMAGES
+export const API_GET = import.meta.env.VITE_CART_GET_API;
+export const API_POST = import.meta.env.VITE_CART_POST_API;
+
+// ALL IMAGES FETCH AND UPLOAD
+export const API_IMAGE = import.meta.env.VITE_SINGLE_IMAGE;
+export const API_ALL_IMAGES = import.meta.env.VITE_IMAGES;
+export const API_UPLOAD = import.meta.env.VITE_CART_POST_API;
+
+// ADD PRODUCT +
+export const API_ADD_PRODUCT = import.meta.env.VITE_ADD_PRODUCT;
+export const API_VIEW_ALL_PRODUCTS = import.meta.env.VITE_VIEW_ALL_PRODUCTS;
+export const API_VIEW_SINGLE_PRODUCT = import.meta.env.VITE_VIEW_SINGLE_PRODUCT;
+export const API_DELETE_PRODUCT = import.meta.env.VITE_DELETE_PRODUCT;
