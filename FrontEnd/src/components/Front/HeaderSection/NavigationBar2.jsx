@@ -6,6 +6,7 @@ import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { CiShoppingCart } from "react-icons/ci";
+// import { useCart } from "../../../Hooks/CartContext";
 
 const categoriesData = [
    { name: 'Our Store', link: '/' },
@@ -96,18 +97,15 @@ function NextNavigationBar() {
    const [isOpen, setIsOpen] = useState(false)
 
    useEffect(() => {
-      const block = document.querySelector('.Cart-Link');
-      const block1 = document.querySelector('.Cart-Link-1');
+      const block = document.querySelector('.CartOpen');
       const handleScroll = () => {
          if (window.scrollY > 130) {
             setIsSticky(true)
-            if (block) block.classList.add('Cart');
-            if (block1) block1.classList.add('Cart')
+            block.classList.add('Cart');
          }
          else {
             setIsSticky(false)
-            if (block) block.classList.remove('Cart');
-            if (block1) block1.classList.add('Cart')
+            block.classList.remove('Cart');
          }
       }
       window.addEventListener("scroll", handleScroll)
@@ -251,7 +249,7 @@ function NextNavigationBar() {
                      <div className="topContent">
                         <ul className="topSlideShow-1 d-flex justify-content-end align-items-center">
                            <li className="slideShow-items relative" style={rightBorder}>
-                              <Link to="/cartproducts" className="Cart-Link-1" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}><CiShoppingCart /></Link>
+                              <button className="CartOpen" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }}><CiShoppingCart /></button>
                            </li>
                            <li className="slideShow-items relative" style={rightBorder}>
                               <div className="currencyButton">
@@ -300,7 +298,9 @@ function NextNavigationBar() {
                </div>
                <div className="col-lg-3">
                   <div className="WeeklyDeal d-flex justify-content-end" style={{ gap: '15px' }}>
-                     <Link to="/cartproducts" className="Cart-Link" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none' }}><CiShoppingCart /></Link>
+                     <button className="CartOpen" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }}>
+                        <CiShoppingCart />
+                     </button>
                      <a href="/" className="d-flex align-items-center" style={{ gap: '3px', fontSize: '18px', fontWeight: '700', color: 'var(--white-color)' }}>
                         <BiSolidOffer /> Weekly Deal
                      </a>

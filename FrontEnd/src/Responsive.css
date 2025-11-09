@@ -30,8 +30,8 @@
   }
   .UserLogin a,
   .WishList a,
-  .CartPage a {
-    font-size: 26px;
+  .CartPage button {
+    font-size: 26px !important;
   }
   .SearchInput {
     width: 100%;

@@ -5,7 +5,6 @@ import LoginPage from './Pages/LoginPage';
 import MainPage from './Pages/MainPage';
 import TestPages from './Pages/TestPages';
 import { CartProvider } from './Hooks/CartContext';
-import CartPage from './Pages/CartPage';
 import BackEndPage from './Pages/BackEndPage';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         <Route path="" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path='/test' element={<TestPages />} />
-        <Route path='/cartproducts' element={<CartPage />} />
         <Route path='/backend' element={<BackEndPage />} />
       </Routes>
     </CartProvider>

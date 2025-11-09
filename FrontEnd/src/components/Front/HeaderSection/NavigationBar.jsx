@@ -3,8 +3,6 @@ import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import Logo from '/Logo.png'
 import NextNavigationBar from "./NavigationBar2";
-import { Link } from "react-router-dom";
-
 
 function NavigationBarSection() {
    return (
@@ -31,7 +29,7 @@ function NavigationBarSection() {
                               </a>
                            </div>
                            <div className="CartPage">
-                              <Link to='/cartproducts' className="d-flex align-items-center">
+                              <button className="Cart-Button d-flex align-items-center" style={{ background: 'none', border: 'none', fontSize: '32px' }}>
                                  <div className="CartIcon">
                                     <CiShoppingCart />
                                  </div>
@@ -40,7 +38,7 @@ function NavigationBarSection() {
                                        My Cart
                                     </p>
                                  </div>
-                              </Link>
+                              </button>
                            </div>
                         </div>
                      </div>
@@ -70,7 +68,7 @@ function NavigationBarSection() {
                            </a>
                         </div>
                         <div className="CartPage">
-                           <Link to="/cartproducts" className="d-flex align-items-center">
+                           <button className="Cart-Button d-flex align-items-center" style={{ background: 'none', border: 'none', fontSize: '32px' }}>
                               <div className="CartIcon">
                                  <CiShoppingCart />
                               </div>
@@ -79,7 +77,7 @@ function NavigationBarSection() {
                                     My Cart
                                  </p>
                               </div>
-                           </Link>
+                           </button>
                         </div>
                      </div>
                   </div>

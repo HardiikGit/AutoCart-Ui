@@ -22,9 +22,9 @@ MongoClient.connect(mongoURI)
   .then((client) => {
     db = client.db(dbName);
     bucket = new GridFSBucket(db, { bucketName: "Products" });
-    console.log("✅ Connected to MongoDB");
+    console.log("Connected to MongoDB");
   })
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
@@ -74,11 +74,11 @@ app.post(
       });
 
       res.json({
-        message: "✅ Product added successfully!",
+        message: "Product added successfully!",
         productId: result.insertedId,
       });
     } catch (err) {
-      console.error("❌ Error in /add-product:", err);
+      console.error("Error in /add-product:", err);
       res.status(500).json({ error: "Server error" });
     }
   }
@@ -121,7 +121,7 @@ app.delete("/product/:id", async (req, res) => {
     await bucket.delete(product.hoverImageId);
     await db.collection("Products").deleteOne({ _id: productId });
 
-    res.json({ message: "🗑️ Product and images deleted successfully" });
+    res.json({ message: "Product and images deleted successfully" });
   } catch (err) {
     res.status(500).json({ error: "Delete failed" });
   }

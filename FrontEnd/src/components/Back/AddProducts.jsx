@@ -170,7 +170,7 @@ function AddProducts() {
       const data = await res.json();
 
       if (res.ok) {
-        alert(data.message || "✅ Product added successfully!");
+        alert(data.message || "Product added successfully!");
         setName("");
         setPrice("");
         setReview("");
@@ -179,11 +179,11 @@ function AddProducts() {
         setPreviewMain(null);
         setPreviewHover(null);
       } else {
-        alert(`❌ Error: ${data.error}`);
+        alert(`Error: ${data.error}`);
       }
     } catch (err) {
       console.error(err);
-      alert("⚠️ Server error while adding product!");
+      alert("Server error while adding product!");
     }
   };
 
