@@ -2,14 +2,6 @@ import { useEffect } from "react";
 import { useCart } from "../../Hooks/CartContext"
 import { CiStar } from "react-icons/ci";
 
-
-// useEffect(() => {
-//   const CartOpenBtn = document.querySelector(".Cart-Open")
-//   const CloseCart = document.querySelector(".Overlay")
-// })
-
-
-
 function CartProducts() {
 
   const { cart, removeFromCart } = useCart();

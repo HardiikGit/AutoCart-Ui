@@ -250,6 +250,6 @@ img,
   z-index: 999990;
   transition: all ease-in 0.8s;
 }
-SideBarOpen{
+SideBarOpen {
   right: 0 !important;
 }
