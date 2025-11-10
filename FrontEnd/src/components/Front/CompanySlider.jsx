@@ -1,22 +1,27 @@
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
-import { API_GET } from "../../../config";
-
-const companyLogos = [
-   { id: '68c91dd2b25298586d231b61', alt: "1" },
-   { id: '68c91df8b25298586d231b63', alt: "2" },
-   { id: '68c91e24b25298586d231b65', alt: "3" },
-   { id: '68c91e71b25298586d231b6b', alt: "6" },
-   { id: '68c91e3db25298586d231b67', alt: "4" },
-   { id: '68c91e56b25298586d231b69', alt: "5" },
-   { id: '68c91dd2b25298586d231b61', alt: "1" },
-   { id: '68c91e71b25298586d231b6b', alt: "6" },
-   { id: '68c91e3db25298586d231b67', alt: "4" },
-];
+import { API_ALL_LOGOS, API_SINGLE_LOGO } from "../../../config";
 
 function CompaniesSlider() {
+   const [companyLogos, setCompanyLogos] = useState([]);
+
+   useEffect(() => {
+      const fetchLogos = async () => {
+         try {
+            const response = await fetch(`${API_ALL_LOGOS}`);
+            const data = await response.json();
+            setCompanyLogos(data);
+         } catch (err) {
+            console.error("Error fetching company logos:", err);
+         }
+      };
+
+      fetchLogos();
+   }, []);
+
    return (
       <div className="MainCompanySlider" style={{ padding: "50px 0px" }}>
          <div className="container">
@@ -32,19 +37,27 @@ function CompaniesSlider() {
                         320: { slidesPerView: 2 },
                         640: { slidesPerView: 4 },
                         1024: { slidesPerView: 5 },
-                        1440: { slidesPerView: 7 },
+                        1440: { slidesPerView: 6 },
                      }}
-                     autoplay={{ delay: 2000, disableOnInteraction: false, }}
-                     className="mySwiper">
-
-                     {companyLogos.map((logo, index) => (
-                        <SwiperSlide key={index}>
+                     autoplay={{ delay: 2000, disableOnInteraction: false }}
+                     className="mySwiper"
+                  >
+                     {companyLogos.map((logo) => (
+                        <SwiperSlide key={logo._id}>
                            <div className="SlideImage d-flex align-items-center justify-content-center">
-                              <img src={`${API_GET}/${logo.id}`} alt={logo.alt} />
+                              <img
+                                 src={`${API_SINGLE_LOGO}/${logo.logoFileId}`}
+                                 alt={logo.companyName}
+                                 title={logo.companyName}
+                                 style={{
+                                    width: "120px",
+                                    height: "120px",
+                                    objectFit: "contain",
+                                 }}
+                              />
                            </div>
                         </SwiperSlide>
                      ))}
-
                   </Swiper>
                </div>
             </div>

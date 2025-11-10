@@ -12,3 +12,9 @@ export const API_ADD_PRODUCT = import.meta.env.VITE_ADD_PRODUCT;
 export const API_VIEW_ALL_PRODUCTS = import.meta.env.VITE_VIEW_ALL_PRODUCTS;
 export const API_VIEW_SINGLE_PRODUCT = import.meta.env.VITE_VIEW_SINGLE_PRODUCT;
 export const API_DELETE_PRODUCT = import.meta.env.VITE_DELETE_PRODUCT;
+
+// LOGO
+export const API_ADD_LOGO = import.meta.env.VITE_ADD_LOGO;
+export const API_SINGLE_LOGO = import.meta.env.VITE_SINGLE_LOGO;
+export const API_ALL_LOGOS = import.meta.env.VITE_SHOW_LOGO;
+export const API_DELETE_LOGO = import.meta.env.VITE_DELETE_LOGO;

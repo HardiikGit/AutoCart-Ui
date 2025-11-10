@@ -79,7 +79,7 @@ function ViewProduct() {
             display: "flex",
             flexWrap: "wrap",
             gap: "20px",
-            justifyContent: "center",
+            justifyContent: "start",
           }}
         >
           {products.length > 0 ? (
@@ -170,6 +170,7 @@ function ViewProduct() {
                   >
                     {/* Product Name */}
                     <div className="PartName">
+                      <p style={{ textAlign: 'left', position: 'absolute', top: '40px', fontSize: '12px', left: '14px', zIndex: '999999999' }}>{product.category}</p>
                       <a
                         href="/"
                         className="d-flex flex-column text-decoration-none"

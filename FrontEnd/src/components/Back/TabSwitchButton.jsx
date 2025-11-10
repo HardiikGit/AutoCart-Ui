@@ -7,18 +7,24 @@ function TabSwitchButton({ activeTab, setActiveTab }) {
           onClick={() => setActiveTab("view")}
           className={`tab-btn ${activeTab === "view" ? "active" : ""}`}
         >
-          View Images
+          Show Company Logo's
+        </button>
+        <button
+          onClick={() => setActiveTab("companylogo")}
+          className={`tab-btn ${activeTab === "companylogo" ? "active" : ""}`}
+        >
+          Add Company Imaages
         </button>
         <button
           onClick={() => setActiveTab("addproduct")}
           className={`tab-btn ${activeTab === "addproduct" ? "active" : ""}`}>
-          Add New Product
+          Add Trending Product
         </button>
         <button
           onClick={() => setActiveTab("productview")}
           className={`tab-btn ${activeTab === "productview" ? "active" : ""}`}
         >
-          View Added Products
+          View Trending Products
         </button>
       </div>
 

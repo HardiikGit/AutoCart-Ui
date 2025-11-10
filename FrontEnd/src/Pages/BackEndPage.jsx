@@ -1,10 +1,11 @@
 import { useState } from "react";
 import TabSwitchButton from "../components/Back/TabSwitchButton";
-import ShowImages from "../components/Back/ShowImages";
 import AddProducts from "../components/Back/AddProducts";
 import ViewProduct from "../components/Back/ViewProduct";
 import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import CompaniesLogos from "../components/Back/CompaniesLogos";
+import CompanyLogos from "../components/Back/CompanyLogos";
 
 function DashBoard() {
  const [activeTab, setActiveTab] = useState("view");
@@ -17,9 +18,10 @@ function DashBoard() {
     </Link>
     <div>
      <TabSwitchButton activeTab={activeTab} setActiveTab={setActiveTab} />
-     {activeTab === "view" && <ShowImages />}
+     {activeTab === "view" && <CompanyLogos />}
      {activeTab === "addproduct" && <AddProducts />}
      {activeTab === 'productview' && <ViewProduct />}
+     {activeTab === 'companylogo' && <CompaniesLogos />}
     </div>
    </div>
   </div>
