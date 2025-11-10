@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import CompaniesLogos from "../components/Back/CompaniesLogos";
 import CompanyLogos from "../components/Back/CompanyLogos";
+import AddLatestProduct from "../components/Back/AddLatestProduct";
+import ViewLatestProduct from "../components/Back/ViewLatestProducts";
 
 function DashBoard() {
  const [activeTab, setActiveTab] = useState("view");
@@ -22,6 +24,8 @@ function DashBoard() {
      {activeTab === "addproduct" && <AddProducts />}
      {activeTab === 'productview' && <ViewProduct />}
      {activeTab === 'companylogo' && <CompaniesLogos />}
+     {activeTab === 'latestproduct' && <AddLatestProduct />}
+     {activeTab === 'viewlatestproduct' && <ViewLatestProduct />}
     </div>
    </div>
   </div>

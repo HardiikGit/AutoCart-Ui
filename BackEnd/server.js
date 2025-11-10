@@ -16,14 +16,17 @@ app.use(express.json());
 const mongoURI = "mongodb://localhost:27017/";
 const dbName = "AutoCartLocal";
 
-let db, productsBucket, companyLogosBucket;
+let db, productsBucket, companyLogosBucket, latestProductsBucket;
 
 MongoClient.connect(mongoURI)
   .then((client) => {
     db = client.db(dbName);
     productsBucket = new GridFSBucket(db, { bucketName: "TrendingProducts" });
+    latestProductsBucket = new GridFSBucket(db, {
+      bucketName: "LatestProducts",
+    });
     companyLogosBucket = new GridFSBucket(db, { bucketName: "CompanyLogos" });
-    console.log("Connected to MongoDB");
+    console.log("Connected to MongoDB ✅");
   })
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
@@ -87,7 +90,6 @@ app.post(
     }
   }
 );
-
 
 // --- GET all products ---
 app.get("/products", async (req, res) => {
@@ -249,6 +251,109 @@ app.delete("/company-logo/:id", async (req, res) => {
     res.status(500).json({
       error: err.message || "Server error during logo deletion",
     });
+  }
+});
+
+// --- ADD LATEST PRODUCT ---
+app.post(
+  "/add-latest-product",
+  upload.fields([
+    { name: "mainImage", maxCount: 1 },
+    { name: "hoverImage", maxCount: 1 },
+  ]),
+  async (req, res) => {
+    try {
+      const { name, price } = req.body;
+      const mainImageFile = req.files["mainImage"]?.[0];
+      const hoverImageFile = req.files["hoverImage"]?.[0];
+
+      if (!name || !price || !mainImageFile || !hoverImageFile) {
+        return res
+          .status(400)
+          .json({ error: "All fields and both images are required!" });
+      }
+
+      // Upload both images to GridFS (latestProductsBucket)
+      const mainImageId = await uploadToGridFS(
+        mainImageFile,
+        latestProductsBucket
+      );
+      const hoverImageId = await uploadToGridFS(
+        hoverImageFile,
+        latestProductsBucket
+      );
+
+      // Save metadata in LatestProducts
+      const result = await db.collection("LatestProducts").insertOne({
+        name,
+        price: parseFloat(price),
+        mainImageId,
+        hoverImageId,
+        createdAt: new Date(),
+      });
+
+      res.json({
+        message: "✅ Latest product added successfully!",
+        productId: result.insertedId,
+      });
+    } catch (err) {
+      console.error("Error in /add-latest-product:", err);
+      res.status(500).json({ error: "Server error" });
+    }
+  }
+);
+
+// --- GET all latest products ---
+app.get("/latest-products", async (req, res) => {
+  try {
+    const products = await db
+      .collection("LatestProducts")
+      .find({})
+      .sort({ createdAt: -1 })
+      .toArray();
+
+    res.json(products);
+  } catch (err) {
+    console.error("Error fetching latest products:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// --- GET image by ID ---
+app.get("/latest-file/:id", async (req, res) => {
+  try {
+    const fileId = new ObjectId(req.params.id);
+    const file = await db
+      .collection("LatestProducts.files")
+      .findOne({ _id: fileId });
+
+    if (!file) return res.status(404).json({ error: "File not found" });
+
+    res.set("Content-Type", file.contentType || "image/jpeg");
+    latestProductsBucket.openDownloadStream(fileId).pipe(res);
+  } catch (err) {
+    res.status(400).json({ error: "Invalid File ID" });
+  }
+});
+
+// --- DELETE latest product ---
+app.delete("/latest-product/:id", async (req, res) => {
+  try {
+    const productId = new ObjectId(req.params.id);
+    const product = await db
+      .collection("LatestProducts")
+      .findOne({ _id: productId });
+
+    if (!product) return res.status(404).json({ error: "Product not found" });
+
+    await latestProductsBucket.delete(product.mainImageId);
+    await latestProductsBucket.delete(product.hoverImageId);
+    await db.collection("LatestProducts").deleteOne({ _id: productId });
+
+    res.json({ message: "✅ Latest product and images deleted successfully" });
+  } catch (err) {
+    console.error("Error deleting latest product:", err);
+    res.status(500).json({ error: "Delete failed" });
   }
 });
 

@@ -26,6 +26,18 @@ function TabSwitchButton({ activeTab, setActiveTab }) {
         >
           View Trending Products
         </button>
+        <button
+          onClick={() => setActiveTab("latestproduct")}
+          className={`tab-btn ${activeTab === "latestproduct" ? "active" : ""}`}
+        >
+          Add Latest Products
+        </button>
+        <button
+          onClick={() => setActiveTab("viewlatestproduct")}
+          className={`tab-btn ${activeTab === "viewlatestproduct" ? "active" : ""}`}
+        >
+          View Latest Products
+        </button>
       </div>
 
     </div>

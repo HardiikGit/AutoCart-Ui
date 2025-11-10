@@ -18,3 +18,9 @@ export const API_ADD_LOGO = import.meta.env.VITE_ADD_LOGO;
 export const API_SINGLE_LOGO = import.meta.env.VITE_SINGLE_LOGO;
 export const API_ALL_LOGOS = import.meta.env.VITE_SHOW_LOGO;
 export const API_DELETE_LOGO = import.meta.env.VITE_DELETE_LOGO;
+
+// LATEST_PRODUCTS
+export const API_POST_LAT_PRODUCT = import.meta.env.VITE_ADD_LATEST_PRODUCT;
+export const API_GET_LAT_PRODUCTS = import.meta.env.VITE_ALL_LAT_PRODUCTS;
+export const API_GET_SINGLE_PRODUCT = import.meta.env.VITE_SINGLE_LAT_PRODUCT;
+export const API_DELETE_LAT_PRODUCT = import.meta.env.VITE_DEL_LAT_PRODUCT;

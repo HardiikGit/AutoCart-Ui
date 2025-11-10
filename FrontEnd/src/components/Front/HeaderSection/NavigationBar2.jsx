@@ -298,7 +298,7 @@ function NextNavigationBar() {
                </div>
                <div className="col-lg-3">
                   <div className="WeeklyDeal d-flex justify-content-end" style={{ gap: '15px' }}>
-                     <button className="CartOpen" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }}>
+                     <button className="CartOpen" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none' }}>
                         <CiShoppingCart />
                      </button>
                      <a href="/" className="d-flex align-items-center" style={{ gap: '3px', fontSize: '18px', fontWeight: '700', color: 'var(--white-color)' }}>
