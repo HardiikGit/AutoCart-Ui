@@ -55,7 +55,7 @@ function TrendingProductsSlider() {
       <div className="Trending_Product_Slider" style={{ padding: "50px 0px", position: "relative" }}>
          {popup && (
             <div
-               style={{ position: 'fixed', top: '20%', right: '2%', zIndex: '1000000', background: 'var(--orange-color)', color: 'var(--white-color)', height: 'auto', width: '300px', padding: '20px 30px', borderRadius: '5px', fontSize: '18px', fontWeight: '500' }}
+               style={{ position: 'fixed', top: '10%', right: '2%', zIndex: '1000000', background: 'var(--orange-color)', color: 'var(--white-color)', height: 'auto', width: '300px', padding: '20px 30px', borderRadius: '5px', fontSize: '18px', fontWeight: '500' }}
             >
                {popup}
             </div>
