@@ -9,9 +9,9 @@ import { API_GET, API_VIEW_ALL_PRODUCTS } from "../../../config";
 function TrendingProductsSlider() {
    const [tabSwitch, setTabSwitch] = useState(0);
    const [products, setProducts] = useState([]);
+   const [popup, setPopup] = useState(null);
    const { addToCart } = useCart();
 
-   // Fetch products from MongoDB
    useEffect(() => {
       const fetchProducts = async () => {
          try {
@@ -25,7 +25,6 @@ function TrendingProductsSlider() {
       fetchProducts();
    }, []);
 
-   // Group products by category
    const bodyPartsData = products.filter((p) => p.category === "Body Parts");
    const enginePartsData = products.filter((p) => p.category === "Engine Parts");
    const accessoriesData = products.filter((p) => p.category === "Accessories");
@@ -40,8 +39,28 @@ function TrendingProductsSlider() {
       setTabSwitch(tabId);
    };
 
+   const handleAddToCart = (product) => {
+      addToCart({
+         id: product._id,
+         name: product.name,
+         image: `${API_GET}/file/${product.mainImageId}`,
+         price: product.price,
+      });
+
+      setPopup(`${product.name} added to cart`);
+      setTimeout(() => setPopup(null), 2000);
+   };
+
    return (
-      <div className="Trending_Product_Slider" style={{ padding: "50px 0px" }}>
+      <div className="Trending_Product_Slider" style={{ padding: "50px 0px", position: "relative" }}>
+         {popup && (
+            <div
+               style={{ position: 'fixed', top: '20%', right: '2%', zIndex: '1000000', background: 'var(--orange-color)', color: 'var(--white-color)', height: 'auto', width: '300px', padding: '20px 30px', borderRadius: '5px', fontSize: '18px', fontWeight: '500' }}
+            >
+               {popup}
+            </div>
+         )}
+
          <div className="container">
             <div className="row">
                <div className="col-lg-12 col-md-12">
@@ -61,8 +80,7 @@ function TrendingProductsSlider() {
                         {tabs.map((tab) => (
                            <button
                               key={tab.id}
-                              className={`Tab_Switch_Button ${tabSwitch === tab.id ? "TabShow bgColor" : ""
-                                 }`}
+                              className={`Tab_Switch_Button ${tabSwitch === tab.id ? "TabShow bgColor" : ""}`}
                               onClick={() => handleTabClick(tab.id)}
                               style={{
                                  padding: "10px 20px",
@@ -71,6 +89,7 @@ function TrendingProductsSlider() {
                                  color: "var(--black-color)",
                                  borderRadius: "5px",
                                  fontWeight: "600",
+                                 border: "1px solid #ddd",
                               }}
                            >
                               {tab.label}
@@ -128,63 +147,23 @@ function TrendingProductsSlider() {
                                                 alt={product.name}
                                              />
                                           </div>
-                                          {product.hoverImageId && (
-                                             <div
-                                                className="Other absolute"
-                                                style={{
-                                                   opacity: "0",
-                                                   top: "10px",
-                                                   left: "0",
-                                                   right: "0",
-                                                   width: "200px",
-                                                   height: "200px",
-                                                   margin: "0 auto",
-                                                   transition: "all ease-in-out 0.5s",
-                                                }}
-                                             >
-                                                <img
-                                                   src={`${API_GET}/${product.hoverImageId}`}
-                                                   className="img-contain"
-                                                   alt="HoverImage"
-                                                />
-                                             </div>
-                                          )}
                                           <div
                                              className="PartsDetails d-flex flexcolumn"
                                              style={{ gap: "10px", padding: "20px" }}
                                           >
                                              <div className="PartName">
-                                                <a
-                                                   href="/"
-                                                   className="d-flex flexcolumn"
-                                                   style={{ color: "var(--black-color)" }}
-                                                >
-                                                   <h4
-                                                      style={{
-                                                         fontSize: "16px",
-                                                         fontWeight: "500",
-                                                      }}
-                                                   >
-                                                      {product.name}
-                                                   </h4>
-                                                </a>
-                                             </div>
-                                             <div className="PartReview">
-                                                <a
-                                                   href="/"
-                                                   className="d-flex"
+                                                <h4
                                                    style={{
-                                                      gap: "2px",
-                                                      color: "#00000076",
-                                                      fontSize: "18px",
+                                                      fontSize: "16px",
+                                                      fontWeight: "500",
+                                                      color: "var(--black-color)",
                                                    }}
                                                 >
-                                                   <CiStar />
-                                                   <CiStar />
-                                                   <CiStar />
-                                                   <CiStar />
-                                                   <CiStar />
-                                                </a>
+                                                   {product.name}
+                                                </h4>
+                                             </div>
+                                             <div className="PartReview d-flex" style={{ gap: "2px", color: "#00000076", fontSize: "18px" }}>
+                                                <CiStar /><CiStar /><CiStar /><CiStar /><CiStar />
                                              </div>
                                              <div className="PartPrice">
                                                 <p
@@ -210,14 +189,7 @@ function TrendingProductsSlider() {
                                                       borderRadius: "2px",
                                                       color: "var(--black-color)",
                                                    }}
-                                                   onClick={() =>
-                                                      addToCart({
-                                                         id: product._id,
-                                                         name: product.name,
-                                                         image: `${API_GET}/file/${product.mainImageId}`,
-                                                         Price: `$${product.price}`,
-                                                      })
-                                                   }
+                                                   onClick={() => handleAddToCart(product)}
                                                 >
                                                    Add to Cart
                                                 </button>
