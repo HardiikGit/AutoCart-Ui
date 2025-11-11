@@ -43,7 +43,7 @@ function TrendingProductsSlider() {
       addToCart({
          id: product._id,
          name: product.name,
-         image: `${API_GET}/file/${product.mainImageId}`,
+         image: `${API_GET}/${product.mainImageId}`,
          price: product.price,
       });
 
@@ -55,7 +55,20 @@ function TrendingProductsSlider() {
       <div className="Trending_Product_Slider" style={{ padding: "50px 0px", position: "relative" }}>
          {popup && (
             <div
-               style={{ position: 'fixed', top: '10%', right: '2%', zIndex: '1000000', background: 'var(--orange-color)', color: 'var(--white-color)', height: 'auto', width: '300px', padding: '20px 30px', borderRadius: '5px', fontSize: '18px', fontWeight: '500' }}
+               style={{
+                  position: "fixed",
+                  top: "20%",
+                  right: "2%",
+                  zIndex: "1000000",
+                  background: "var(--orange-color)",
+                  color: "var(--white-color)",
+                  height: "auto",
+                  width: "300px",
+                  padding: "20px 30px",
+                  borderRadius: "5px",
+                  fontSize: "18px",
+                  fontWeight: "500",
+               }}
             >
                {popup}
             </div>
@@ -131,6 +144,8 @@ function TrendingProductsSlider() {
                                           style={{
                                              border: "1px solid #00000039",
                                              cursor: "pointer",
+                                             position: "relative",
+                                             overflow: "hidden",
                                           }}
                                        >
                                           <div
@@ -139,13 +154,28 @@ function TrendingProductsSlider() {
                                                 width: "200px",
                                                 height: "200px",
                                                 margin: "0 auto",
+                                                position: "relative",
                                              }}
                                           >
                                              <img
                                                 src={`${API_GET}/${product.mainImageId}`}
-                                                className="img-contain"
                                                 alt={product.name}
+                                                style={{
+                                                   width: "100%",
+                                                   height: "100%",
+                                                   objectFit: "contain",
+                                                   transition: "opacity 0.3s ease",
+                                                }}
                                              />
+                                             <div className="hover-img absolute" style={{ top: '0', left: '0', right: '0', opacity: '0', transition: 'all ease-in-out .2s' }}>
+                                                {product.hoverImageId && (
+                                                   <img
+                                                      src={`${API_GET}/${product.hoverImageId}`}
+                                                      alt="hover"
+                                                      className="img-cover"
+                                                   />
+                                                )}
+                                             </div>
                                           </div>
                                           <div
                                              className="PartsDetails d-flex flexcolumn"

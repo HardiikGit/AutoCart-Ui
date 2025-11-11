@@ -1,19 +1,22 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useCart } from "../../Hooks/CartContext"
 import { CiStar } from "react-icons/ci";
+import { RxCross1 } from "react-icons/rx";
 
-function CartProducts() {
+function CartProducts({ showCart, close }) {
 
   const { cart, removeFromCart } = useCart();
 
   return (
     <div>
-      <div className="Overlay"></div>
-      <div className="CartProductsMain">
+      <div className="CartProductsMain" style={{ right: showCart ? "0" : "-100%" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="Cart-Products d-flex">
+              <div className="CloseCart">
+                <button className="" onClick={close} style={{ background: '#c9c9c91a', border: 'none', fontSize: '28px', padding: '10px' }}><RxCross1 /></button>
+              </div>
+              <div className="Cart-Products d-flex justify-content-start flexwrap">
                 {cart.map((data, index) => (
                   <div key={data.id} className="BodyCard" style={{ border: '1px solid #00000039', cursor: 'pointer', height: 'unset', width: '300px' }}>
                     <div className="BodyPartCard" style={{ width: '200px', height: '200px', margin: '0 auto' }}>

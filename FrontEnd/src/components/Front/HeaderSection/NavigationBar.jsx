@@ -3,8 +3,15 @@ import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import Logo from '/Logo.png'
 import NextNavigationBar from "./NavigationBar2";
+import { useCart } from "../../../Hooks/CartContext";
+import CartProducts from "../CartProducts";
+import { useState } from "react";
+
 
 function NavigationBarSection() {
+   const { cart } = useCart();
+   const [showCart, setShowCart] = useState(false)
+
    return (
       <>
          <nav className="NavigationBar" style={{ padding: "20px 0px" }}>
@@ -29,7 +36,7 @@ function NavigationBarSection() {
                               </a>
                            </div>
                            <div className="CartPage">
-                              <button className="Cart-Button d-flex align-items-center" style={{ background: 'none', border: 'none', fontSize: '32px' }}>
+                              <button className="Cart-Button d-flex align-items-center" style={{ background: 'none', border: 'none', fontSize: '32px' }} onClick={() => { setShowCart(true) }}>
                                  <div className="CartIcon">
                                     <CiShoppingCart />
                                  </div>
@@ -38,6 +45,7 @@ function NavigationBarSection() {
                                        My Cart
                                     </p>
                                  </div>
+                                 {cart.length}
                               </button>
                            </div>
                         </div>
@@ -85,6 +93,7 @@ function NavigationBarSection() {
             </div>
          </nav>
          <NextNavigationBar />
+         <CartProducts showCart={showCart} />
       </>
    )
 }

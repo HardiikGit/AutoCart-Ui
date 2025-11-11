@@ -10,7 +10,7 @@ function AddProducts() {
   const [previewMain, setPreviewMain] = useState(null);
   const [previewHover, setPreviewHover] = useState(null);
 
-  // Handle main image upload
+
   const handleMainImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -19,7 +19,6 @@ function AddProducts() {
     }
   };
 
-  // Handle hover image upload
   const handleHoverImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -28,13 +27,11 @@ function AddProducts() {
     }
   };
 
-  // Only allow numbers or decimals in price
   const handlePriceChange = (e) => {
     const value = e.target.value;
     if (/^\d*\.?\d*$/.test(value)) setPrice(value);
   };
 
-  // Submit form data
   const handleSubmit = async () => {
     if (!name.trim() || !price || !category.trim() || !mainImage || !hoverImage) {
       console.warn("Missing field:", { name, price, category, mainImage, hoverImage });
@@ -98,7 +95,6 @@ function AddProducts() {
           onChange={(e) => setName(e.target.value)}
         />
 
-        {/* Product Price */}
         <input
           type="number"
           placeholder="Enter Product Price"
@@ -107,7 +103,6 @@ function AddProducts() {
           onChange={handlePriceChange}
         />
 
-        {/* Category */}
         <select
           className="input-field"
           value={category}
@@ -119,8 +114,6 @@ function AddProducts() {
           <option value="Accessories">Accessories</option>
         </select>
 
-
-        {/* Main Product Image */}
         <label className="mt-2">Upload Main Image:</label>
         <input
           type="file"
@@ -141,7 +134,6 @@ function AddProducts() {
           />
         )}
 
-        {/* Hover Product Image */}
         <label className="mt-2">Upload Hover Image:</label>
         <input
           type="file"
