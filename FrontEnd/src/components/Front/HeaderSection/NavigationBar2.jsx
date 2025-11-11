@@ -97,15 +97,17 @@ function NextNavigationBar() {
    const [isOpen, setIsOpen] = useState(false)
 
    useEffect(() => {
-      const block = document.querySelector('.CartOpen');
+
+      const CartOpenClone = document.querySelector('.CartOpen-1')
+
       const handleScroll = () => {
          if (window.scrollY > 130) {
             setIsSticky(true)
-            block.classList.add('Cart');
+            CartOpenClone.classList.add('Cart')
          }
          else {
             setIsSticky(false)
-            block.classList.remove('Cart');
+            CartOpenClone.classList.remove('Cart')
          }
       }
       window.addEventListener("scroll", handleScroll)
@@ -298,7 +300,7 @@ function NextNavigationBar() {
                </div>
                <div className="col-lg-3">
                   <div className="WeeklyDeal d-flex justify-content-end" style={{ gap: '15px' }}>
-                     <button className="CartOpen" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none' }}>
+                     <button className="CartOpen-1" style={{ height: '32px', fontSize: '32px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none' }}>
                         <CiShoppingCart />
                      </button>
                      <a href="/" className="d-flex align-items-center" style={{ gap: '3px', fontSize: '18px', fontWeight: '700', color: 'var(--white-color)' }}>
