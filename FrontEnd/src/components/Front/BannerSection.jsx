@@ -1,4 +1,3 @@
-import { API_GET } from '../../../config';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -6,24 +5,24 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
 const bannerData = [
    {
-      id: '68c90f08c8b63503abe24460',
+      image: '/main-banner-1.jpg',
       price: '$199',
       title: 'Two Day Shipping <br/> On All Orders',
       discount: '40% off',
    },
    {
-      id: '68c90f89c8b63503abe24462',
+      image: '/main-banner-2.jpg',
       price: '$99',
       title: 'Oil Canisters and <br/> Car Oil Filter',
       discount: '30% off',
    },
 ];
+
 const rightBannerData = [
    {
-      id: '68c91d6cb25298586d231b5d',
+      image: '/sub-banner-1.jpg',
       price: '$149',
       title: 'Pro Wheel',
       desc: 'Black Rhino Primm',
@@ -31,7 +30,7 @@ const rightBannerData = [
       position: { top: '0', left: '0' },
    },
    {
-      id: '68c91dafb25298586d231b5f',
+      image: '/sub-banner-2.jpg',
       price: '$240',
       title: 'Buy Brake',
       desc: 'Spin-On Lube Filter',
@@ -41,11 +40,11 @@ const rightBannerData = [
 ];
 
 function BannerSection() {
-
    return (
-      <div className='MainBannerSection' style={{ padding: '20px' }}>
+      <div className="MainBannerSection" style={{ padding: '20px' }}>
          <div className="container">
             <div className="row">
+               {/* Left Banner (Swiper) */}
                <div className="col-lg-8 col-md-12 col-sm-12">
                   <Swiper
                      autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -68,7 +67,7 @@ function BannerSection() {
                      {bannerData.map((item, index) => (
                         <SwiperSlide key={index} className="relative">
                            <img
-                              src={`${API_GET}/${item.id}`}
+                              src={item.image}
                               alt={`Banner_${index + 1}`}
                               className="img-cover"
                            />
@@ -134,6 +133,7 @@ function BannerSection() {
                   </Swiper>
                </div>
 
+               {/* Right Banners */}
                <div className="col-lg-4 col-md-12">
                   <div className="RightBannerSection">
                      <div className="BannerBoxes d-flex flexcolumn" style={{ gap: '20px' }}>
@@ -144,7 +144,7 @@ function BannerSection() {
                               style={{ height: '227px', zIndex: '0' }}
                            >
                               <img
-                                 src={`${API_GET}/${item.id}`}
+                                 src={item.image}
                                  className="img-cover"
                                  alt={item.title}
                                  style={{
@@ -179,14 +179,10 @@ function BannerSection() {
                                     </h3>
                                  </div>
                                  <div className="txt" style={{ marginBottom: '10px' }}>
-                                    <p style={{ fontWeight: '500', fontSize: '18px' }}>
-                                       {item.desc}
-                                    </p>
+                                    <p style={{ fontWeight: '500', fontSize: '18px' }}>{item.desc}</p>
                                  </div>
                                  <div className="button">
-                                    <a style={{ textTransform: 'uppercase', fontSize: '14px' }}>
-                                       Shop Now
-                                    </a>
+                                    <a style={{ textTransform: 'uppercase', fontSize: '14px' }}>Shop Now</a>
                                  </div>
                               </div>
                            </div>

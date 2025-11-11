@@ -32,7 +32,7 @@ function LatestSlider() {
           className="trending_Banner hidden relative d-flex justify-content-center"
           style={{
             width: '300px',
-            maxHeight: '450px',
+            maxHeight: '410px',
             borderRadius: '10px',
             color: 'var(--white-color)',
           }}
