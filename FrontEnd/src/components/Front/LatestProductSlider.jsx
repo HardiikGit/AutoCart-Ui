@@ -9,7 +9,6 @@ function LatestSlider() {
   const swiperStop = useRef(null);
   const [latestProductsData, setLatestProductsData] = useState([]);
 
-  // Fetch latest products from backend
   useEffect(() => {
     const fetchLatestProducts = async () => {
       try {
@@ -26,7 +25,6 @@ function LatestSlider() {
 
   return (
     <div className="row align-items-center">
-      {/* Left Banner */}
       <div className="col-lg-3">
         <div
           className="trending_Banner hidden relative d-flex justify-content-center"
@@ -71,7 +69,6 @@ function LatestSlider() {
         </div>
       </div>
 
-      {/* Right Slider */}
       <div className="col-lg-9">
         <div
           onMouseEnter={() => swiperStop.current?.autoplay?.stop()}

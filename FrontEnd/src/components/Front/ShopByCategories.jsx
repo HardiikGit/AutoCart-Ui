@@ -109,11 +109,11 @@ function ShopbyCategory() {
               gap: '40px',
               background: '#fff',
               padding: '20px',
-              borderRadius: '10px',
+              borderRadius: '2px',
               boxShadow: '0 0 10px #0000001a',
              }}
             >
-             <div className="Wrapper_Image" style={{ width: '150px', height: '150px' }}>
+             <div className="Wrapper_Image" style={{ width: '190px', height: '190px' }}>
               <img
                src={category.image}
                className="img-cover"
