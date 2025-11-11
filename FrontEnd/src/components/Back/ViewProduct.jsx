@@ -48,7 +48,7 @@ function ViewProduct() {
   if (loading) {
     return (
       <div className="MainViewProduct">
-        <div className="container text-center mt-5">
+        <div className="container text-center">
           <h2 className="loading-text">Loading products...</h2>
         </div>
       </div>

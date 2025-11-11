@@ -1,110 +1,93 @@
-import { API_GET } from '../../../config';
-import { useRef } from 'react';
+import { API_GET_SINGLE_PRODUCT, API_GET_LAT_PRODUCTS } from '../../../config';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'
+import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { CiStar } from 'react-icons/ci';
 
 function LatestSlider() {
+  const swiperStop = useRef(null);
+  const [latestProductsData, setLatestProductsData] = useState([]);
 
-  const swiperStop = useRef(null)
+  // Fetch latest products from backend
+  useEffect(() => {
+    const fetchLatestProducts = async () => {
+      try {
+        const res = await fetch(API_GET_LAT_PRODUCTS);
+        const data = await res.json();
+        setLatestProductsData(data);
+      } catch (error) {
+        console.error("Error fetching latest products:", error);
+      }
+    };
 
-  const latestProductsData = [
-    {
-      id: 'latest-1',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d27757f5f8ea4290cbaeee',
-      hoverImage: '68d2778bf5f8ea4290cbaef0',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-2',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d277c0f5f8ea4290cbaef2',
-      hoverImage: '68d277ddf5f8ea4290cbaef4',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-3',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d27815f5f8ea4290cbaef6',
-      hoverImage: '68d3bd8ef985b9550afc82c0',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-4',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d2785ff5f8ea4290cbaefa',
-      hoverImage: '68d2787ef5f8ea4290cbaefc',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-5',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d278b5f5f8ea4290cbaefe',
-      hoverImage: '68d278daf5f8ea4290cbaf00',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-6',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d2794ff5f8ea4290cbaf02',
-      hoverImage: '68d27968f5f8ea4290cbaf04',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-7',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68cbb7e1f8d48ccf362bd49a',
-      hoverImage: '68cbf4b8ea608757bdcaee90',
-      price: '$21.00'
-    },
-    {
-      id: 'latest-8',
-      name: 'New Upgraded 1-Piece Rear Driveshaft & Parts',
-      image: '68d3c872f985b9550afc82c2',
-      hoverImage: '68d3c891f985b9550afc82c4',
-      price: '$21.00'
-    },
-  ];
+    fetchLatestProducts();
+  }, []);
 
   return (
-    <div className="row">
+    <div className="row align-items-center">
+      {/* Left Banner */}
       <div className="col-lg-3">
-        <div className="trending_Banner hidden relative d-flex justify-content-center" style={{ width: '100%', maxHeight: '400px', borderRadius: '10px', color: 'var(--white-color)' }}>
-          <img src={`${API_GET}/${'68d1202614c1dbf02b9598d9'}`} className='img-cover' alt="" />
-          <div className='Trending_text text-center absolute' style={{ top: '20px', padding: '20px', }}>
-            <div className='mx-auto' style={{ marginBottom: '20px', width: '75%' }}>
-              <h4 style={{ textTransform: 'uppercase', background: 'var(--orange-color)', fontSize: '16px', padding: '5px 0px' }}>Up To 30% Discount</h4>
+        <div
+          className="trending_Banner hidden relative d-flex justify-content-center"
+          style={{
+            width: '300px',
+            maxHeight: '450px',
+            borderRadius: '10px',
+            color: 'var(--white-color)',
+          }}
+        >
+          <img src="/Lat.jpg" className="img-contain" alt="" />
+          <div
+            className="Trending_text text-center absolute"
+            style={{ top: '20px', padding: '20px' }}
+          >
+            <div
+              className="mx-auto"
+              style={{ marginBottom: '20px', width: '75%' }}
+            >
+              <h4
+                style={{
+                  textTransform: 'uppercase',
+                  background: 'var(--orange-color)',
+                  fontSize: '16px',
+                  padding: '5px 0px',
+                }}
+              >
+                Up To 30% Discount
+              </h4>
             </div>
             <div>
-              <h3 style={{ textTransform: 'uppercase', fontSize: '24px' }}>Rubber Tubeless Tyre For Car</h3>
+              <h3
+                style={{
+                  textTransform: 'uppercase',
+                  fontSize: '24px',
+                }}
+              >
+                Rubber Tubeless Tyre For Car
+              </h3>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Right Slider */}
       <div className="col-lg-9">
-        <div onMouseEnter={() => swiperStop.current.autoplay.stop()}
-          onMouseLeave={() => swiperStop.current.autoplay.start()} className='Slider-L'>
-          <Swiper className='mySwiper margin0'
+        <div
+          onMouseEnter={() => swiperStop.current?.autoplay?.stop()}
+          onMouseLeave={() => swiperStop.current?.autoplay?.start()}
+          className="Slider-L"
+        >
+          <Swiper
+            className="mySwiper margin0"
             modules={[Autoplay, Navigation]}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
             breakpoints={{
-              320: {
-                slidesPerView: 1
-              },
-              640: {
-                slidesPerView: 2
-              },
-              1024: {
-                slidesPerView: 3
-              },
-              1200: {
-                slidesPerView: 3
-              },
-              1400: {
-                slidesPerView: 4
-              }
+              320: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1200: { slidesPerView: 3 },
+              1400: { slidesPerView: 4 },
             }}
             spaceBetween={40}
             loop={true}
@@ -114,50 +97,132 @@ function LatestSlider() {
               prevEl: '.PreviousBtn',
             }}
             onSwiper={(swiper) => (swiperStop.current = swiper)}
-            style={{ marginRight: '15px' }}>
+            style={{ marginRight: '15px' }}
+          >
+            {latestProductsData.length > 0 ? (
+              latestProductsData.map((product) => (
+                <SwiperSlide key={product._id}>
+                  <div
+                    className="BodyCard"
+                    style={{
+                      border: '1px solid #00000039',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    <div
+                      className="BodyPartCard relative"
+                      style={{
+                        width: '200px',
+                        height: '200px',
+                        margin: '0 auto',
+                        position: 'relative',
+                      }}
+                    >
+                      <img
+                        src={`${API_GET_SINGLE_PRODUCT}/${product.mainImageId}`}
+                        alt={product.name}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          transition: 'opacity 0.5s ease-in-out',
+                        }}
+                        onMouseOver={(e) => {
+                          if (product.hoverImageId) {
+                            e.currentTarget.src = `${API_GET_SINGLE_PRODUCT}/${product.hoverImageId}`;
+                          }
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.src = `${API_GET_SINGLE_PRODUCT}/${product.mainImageId}`;
+                        }}
+                      />
+                    </div>
 
-            {latestProductsData.map((product) => (
-              <SwiperSlide key={product.id}>
-                <div className="BodyCard" style={{ border: '1px solid #00000039', cursor: 'pointer' }}>
-                  <div className="BodyPartCard relative" style={{ width: '200px', height: '200px', margin: '0 auto' }}>
-                    <img src={`${API_GET}/${product.image}`} className="img-contain" alt={product.name} />
-                    <div className="Other absolute" style={{ opacity: '0', top: '10px', left: '0', right: '0', margin: '0 auto', transition: 'all ease-in-out 0.5s' }}>
-                      <img src={`${API_GET}/${product.hoverImage}`} className="img-contain" alt="HoverImage" />
+                    <div
+                      className="PartsDetails d-flex flexcolumn"
+                      style={{ gap: '10px', padding: '20px' }}
+                    >
+                      <div className="PartName">
+                        <h4
+                          style={{
+                            fontSize: '16px',
+                            fontWeight: '500',
+                            color: 'var(--black-color)',
+                            marginBottom: '5px',
+                          }}
+                        >
+                          {product.name}
+                        </h4>
+                      </div>
+
+                      <div
+                        className="PartReview d-flex"
+                        style={{
+                          gap: '2px',
+                          color: '#00000076',
+                          fontSize: '18px',
+                        }}
+                      >
+                        <CiStar />
+                        <CiStar />
+                        <CiStar />
+                        <CiStar />
+                        <CiStar />
+                      </div>
+
+                      <div className="PartPrice">
+                        <p
+                          style={{
+                            color: 'var(--orange-color)',
+                            fontSize: '16px',
+                            fontWeight: '700',
+                          }}
+                        >
+                          ${product.price}
+                        </p>
+                      </div>
+
+                      <div className="CartBox">
+                        <button
+                          className="CartButton"
+                          style={{
+                            fontSize: '16px',
+                            fontWeight: '700',
+                            textTransform: 'uppercase',
+                            padding: '10px 15px',
+                            background: '#e1e1e160',
+                            border: '1px solid #e1e1e160',
+                            borderRadius: '5px',
+                            color: 'var(--black-color)',
+                          }}
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className="PartsDetails d-flex flexcolumn" style={{ gap: '10px', padding: '20px' }}>
-                    <div className="PartName">
-                      <a href="/" className="d-flex flexcolumn" style={{ color: 'var(--black-color)' }}>
-                        <h4 style={{ fontSize: '16px', fontWeight: '500' }}>{product.name}</h4>
-                      </a>
-                    </div>
-                    <div className="PartReview">
-                      <a href="/" className="d-flex" style={{ gap: '2px', color: '#00000076', fontSize: '18px' }}>
-                        <CiStar />
-                        <CiStar />
-                        <CiStar />
-                        <CiStar />
-                        <CiStar />
-                      </a>
-                    </div>
-                    <div className="PartPrice">
-                      <p style={{ color: 'var(--orange-color)', fontSize: '16px', fontWeight: '700' }}>{product.price}</p>
-                    </div>
-                    <div className="CartBox">
-                      <button className="CartButton" style={{
-                        fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', padding: '10px 15px', background: '#e1e1e160', border: '1px solid #e1e1e160', borderRadius: '5px', color: 'var(--black-color)'
-                      }}>Add to Cart</button>
-                    </div>
-                  </div>
+                </SwiperSlide>
+              ))
+            ) : (
+              <SwiperSlide>
+                <div
+                  style={{
+                    textAlign: 'center',
+                    padding: '50px',
+                    fontSize: '18px',
+                    color: '#666',
+                  }}
+                >
+                  No latest products found
                 </div>
               </SwiperSlide>
-            ))}
-
+            )}
           </Swiper>
         </div>
       </div>
-    </div >
-  )
+    </div>
+  );
 }
 
 export default LatestSlider;

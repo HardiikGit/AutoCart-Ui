@@ -6,7 +6,28 @@ function AddLatestProduct() {
  const [price, setPrice] = useState("");
  const [mainImage, setMainImage] = useState(null);
  const [hoverImage, setHoverImage] = useState(null);
+ const [previewMain, setPreviewMain] = useState(null);
+ const [previewHover, setPreviewHover] = useState(null);
 
+ // Handle main image upload
+ const handleMainImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+   setMainImage(file);
+   setPreviewMain(URL.createObjectURL(file)); // ✅ instant preview
+  }
+ };
+
+ // Handle hover image upload
+ const handleHoverImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+   setHoverImage(file);
+   setPreviewHover(URL.createObjectURL(file)); // ✅ instant preview
+  }
+ };
+
+ // Submit form data
  const handleSubmit = async () => {
   if (!name || !price || !mainImage || !hoverImage) {
    alert("Please fill all fields and upload both images!");
@@ -27,32 +48,43 @@ function AddLatestProduct() {
    const data = await res.json();
 
    if (res.ok) {
-    alert("Product added successfully!");
+    alert("✅ Product added successfully!");
     setName("");
     setPrice("");
     setMainImage(null);
     setHoverImage(null);
+    setPreviewMain(null);
+    setPreviewHover(null);
    } else {
-    alert(`${data.error}`);
+    alert(data.error || "Failed to add product!");
    }
   } catch (err) {
-   alert("Error uploading product!");
+   alert("Server error while uploading!");
   }
  };
 
  return (
-  <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-2xl mt-10">
-   <h2 className="text-2xl font-bold mb-5 text-center text-gray-700">
+  <div className="d-flex align-items-center flexcolumn" style={{}}>
+   <h2
+    style={{
+     fontSize: "24px",
+     textAlign: "center",
+     fontWeight: "700",
+     marginBottom: "30px",
+    }}
+   >
     Add Latest Product
    </h2>
 
-   <div className="space-y-4">
+   <div style={{
+    display: "flex", flexDirection: "column", gap: "20px", width: '100%', alignItems: 'center'
+   }}>
     <input
      type="text"
      placeholder="Product Name"
      value={name}
      onChange={(e) => setName(e.target.value)}
-     className="w-full border p-2 rounded-lg"
+     className="input-field"
     />
 
     <input
@@ -60,30 +92,60 @@ function AddLatestProduct() {
      placeholder="Product Price"
      value={price}
      onChange={(e) => setPrice(e.target.value)}
-     className="w-full border p-2 rounded-lg"
+     className="input-field"
     />
 
-    <div>
-     <label className="block text-gray-600 mb-1">Main Image</label>
+    {/* Main Image Upload */}
+    <div className="d-flex flexcolumn align-items-center" style={{ gap: '10px', width: '100%' }}>
+     <label style={{ fontWeight: "600" }}>Main Image</label>
      <input
       type="file"
-      onChange={(e) => setMainImage(e.target.files[0])}
-      className="w-full border p-2 rounded-lg"
+      accept="image/*"
+      onChange={handleMainImageChange}
+      className="input-field"
      />
+     {previewMain && (
+      <img
+       src={previewMain}
+       alt="Main Preview"
+       style={{
+        width: "200px",
+        height: "auto",
+        marginTop: "10px",
+        borderRadius: "8px",
+        border: "1px solid #ddd",
+       }}
+      />
+     )}
     </div>
 
-    <div>
-     <label className="block text-gray-600 mb-1">Hover Image</label>
+    {/* Hover Image Upload */}
+    <div className="d-flex flexcolumn align-items-center" style={{ gap: '10px', width: '100%' }}>
+     <label style={{ fontWeight: "600" }}>Hover Image</label>
      <input
       type="file"
-      onChange={(e) => setHoverImage(e.target.files[0])}
-      className="w-full border p-2 rounded-lg"
+      accept="image/*"
+      onChange={handleHoverImageChange}
+      className="input-field"
      />
+     {previewHover && (
+      <img
+       src={previewHover}
+       alt="Hover Preview"
+       style={{
+        width: "200px",
+        height: "auto",
+        marginTop: "10px",
+        borderRadius: "8px",
+        border: "1px solid #ddd",
+       }}
+      />
+     )}
     </div>
 
     <button
      onClick={handleSubmit}
-     className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+     className="submit-btn justify-content-center"
     >
      Add Product
     </button>
