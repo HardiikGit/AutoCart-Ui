@@ -1,4 +1,6 @@
  # Ask for commit message
+ echo ''
+ echo '' 
  read -p "Enter your commit message: " msg
 
  echo

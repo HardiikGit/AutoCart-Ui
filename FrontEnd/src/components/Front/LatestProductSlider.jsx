@@ -31,7 +31,6 @@ function LatestSlider() {
     setTimeout(() => setPopup(null), 2000);
   };
 
-  console.log(popup)
   return (
     <div className="relative">
       {popup && (
