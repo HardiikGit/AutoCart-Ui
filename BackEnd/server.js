@@ -13,7 +13,8 @@ app.use(
 app.use(express.json());
 
 // --- MongoDB Connection ---
-const mongoURI = "mongodb://localhost:27017/";
+const mongoURI =
+  "mongodb+srv://AutoCartdb:Admin123@cluster0.peihb2y.mongodb.net/";
 const dbName = "AutoCartLocal";
 
 let db, productsBucket, companyLogosBucket, latestProductsBucket;
@@ -26,7 +27,7 @@ MongoClient.connect(mongoURI)
       bucketName: "LatestProducts",
     });
     companyLogosBucket = new GridFSBucket(db, { bucketName: "CompanyLogos" });
-    console.log("Connected to MongoDB ✅");
+    console.log("Connected to MongoDB");
   })
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
@@ -59,7 +60,6 @@ app.post(
       const mainImageFile = req.files["mainImage"]?.[0];
       const hoverImageFile = req.files["hoverImage"]?.[0];
 
-      // Validate fields
       if (!name || !price || !category || !mainImageFile || !hoverImageFile) {
         return res
           .status(400)
@@ -228,8 +228,6 @@ app.delete("/company-logo/:id", async (req, res) => {
         .status(404)
         .json({ error: "Company logo not found in database" });
     }
-
-    // Try deleting the GridFS file safely
     try {
       const logoFileId =
         typeof logo.logoId === "string"
@@ -241,8 +239,6 @@ app.delete("/company-logo/:id", async (req, res) => {
     } catch (err) {
       console.warn("Skipping GridFS delete:", err.message);
     }
-
-    // Delete database entry
     await db.collection("CompanyLogos").deleteOne({ _id: logoDbId });
 
     res.json({ message: "Company logo and its file deleted successfully!" });
@@ -272,8 +268,6 @@ app.post(
           .status(400)
           .json({ error: "All fields and both images are required!" });
       }
-
-      // Upload both images to GridFS (latestProductsBucket)
       const mainImageId = await uploadToGridFS(
         mainImageFile,
         latestProductsBucket
@@ -282,8 +276,6 @@ app.post(
         hoverImageFile,
         latestProductsBucket
       );
-
-      // Save metadata in LatestProducts
       const result = await db.collection("LatestProducts").insertOne({
         name,
         price: parseFloat(price),
@@ -293,7 +285,7 @@ app.post(
       });
 
       res.json({
-        message: "✅ Latest product added successfully!",
+        message: "Latest product added successfully!",
         productId: result.insertedId,
       });
     } catch (err) {
@@ -350,7 +342,7 @@ app.delete("/latest-product/:id", async (req, res) => {
     await latestProductsBucket.delete(product.hoverImageId);
     await db.collection("LatestProducts").deleteOne({ _id: productId });
 
-    res.json({ message: "✅ Latest product and images deleted successfully" });
+    res.json({ message: "Latest product and images deleted successfully" });
   } catch (err) {
     console.error("Error deleting latest product:", err);
     res.status(500).json({ error: "Delete failed" });
