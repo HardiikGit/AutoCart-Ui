@@ -238,7 +238,7 @@ img,
   z-index: 999999;
   overflow: scroll !important;
   scrollbar-width: none;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in 0.5s;
   padding: 10px;
 }
 .Overlay {
