@@ -258,7 +258,7 @@ function NextNavigationBar() {
                         <div className="topContent">
                            <ul className="topSlideShow-1 d-flex justify-content-end align-items-center">
                               <li className="slideShow-items relative" style={rightBorder}>
-                                 <button className="CartOpen" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }}><CiShoppingCart />{cart.length}</button>
+                                 <button className="CartOpen" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }} onClick={() => { setShowCart(true) }}><CiShoppingCart />{cart.length}</button>
                               </li>
                               <li className="slideShow-items relative" style={rightBorder}>
                                  <div className="currencyButton">
@@ -272,7 +272,6 @@ function NextNavigationBar() {
                                  <div className={`dropDown ${(show === 1) ? "show" : "none"}`}
                                  >
                                     <ul className="currencyDownBox d-flex flexcolumn" style={{ gap: "5px" }}>
-                                       {/* Refactored: Currency Dropdown */}
                                        {currencyOptions.map((option, index) => (
                                           <li key={index} className="downBox">
                                              <a href={option.link}>{option.display}</a>
@@ -320,7 +319,7 @@ function NextNavigationBar() {
                </div>
             </div>
 
-         </div > <CartProducts showCart={showCart} close = {()=>{setShowCart(false)}} />
+         </div > <CartProducts showCart={showCart} close={() => { setShowCart(false) }} />
 
       </>
    )

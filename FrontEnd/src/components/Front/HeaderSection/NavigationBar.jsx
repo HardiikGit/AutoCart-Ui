@@ -54,7 +54,7 @@ function NavigationBarSection() {
                   <div className="col-lg-6 col-md-6">
                      <div className="NavigationSearchBar d-flex align-items-center justify-content-center" style={{ gap: "15px" }}>
                         <div className="SearchInput d-flex align-items-center hidden">
-                           <input type="search" placeholder='Search' minLength={1} maxLength={100} />
+                           <input type="search" placeholder='Search' minLength={1} maxLength={100} name="" id="" />
                            <button className="InputButton" style={{ textTransform: 'uppercase' }}>Search</button>
                         </div>
                         <div className="HelpCenter">

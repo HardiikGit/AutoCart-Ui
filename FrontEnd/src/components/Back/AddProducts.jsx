@@ -93,6 +93,8 @@ function AddProducts() {
           className="input-field"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          name=""
+          id=""
         />
 
         <input
@@ -101,6 +103,8 @@ function AddProducts() {
           className="input-field"
           value={price}
           onChange={handlePriceChange}
+          name=""
+          id=""
         />
 
         <select
@@ -120,6 +124,8 @@ function AddProducts() {
           accept="image/*"
           className="input-field"
           onChange={handleMainImageChange}
+          name=""
+          id=""
         />
         {previewMain && (
           <img
@@ -140,6 +146,8 @@ function AddProducts() {
           accept="image/*"
           className="input-field"
           onChange={handleHoverImageChange}
+          name=""
+          id=""
         />
         {previewHover && (
           <img

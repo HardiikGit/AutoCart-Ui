@@ -56,6 +56,9 @@
   .Cart-Link-1 {
     height: 18px;
   }
+  .CartProductsMain {
+    width: 60%;
+  }
 }
 @media (max-width: 567px) {
   .MainBannerSection {
@@ -98,7 +101,8 @@
   .Cart-Products {
     flex-direction: column;
   }
-  .BodyCard {
+  .BodyCard,
+  .CartProductsMain {
     width: 100% !important;
   }
 }

@@ -65,6 +65,8 @@ function CompaniesLogos() {
       placeholder="Enter Company Name"
       value={companyName}
       onChange={(e) => setCompanyName(e.target.value)}
+      name=""
+      id=""
      />
     </div>
 
@@ -75,6 +77,7 @@ function CompaniesLogos() {
       id="companyImageInput"
       accept="image/*"
       onChange={handleFileChange}
+      name=""
      />
     </div>
     {previewImage && (

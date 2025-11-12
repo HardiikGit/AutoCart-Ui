@@ -119,7 +119,7 @@ function TrendingProductsSlider() {
                               modules={[Navigation, Autoplay]}
                               spaceBetween={30}
                               slidesPerView={1}
-                              loop={true}
+                              // loop={true}
                               autoplay={{
                                  delay: 7000,
                                  disableOnInteraction: false,

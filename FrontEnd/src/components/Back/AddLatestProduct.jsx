@@ -85,6 +85,8 @@ function AddLatestProduct() {
      value={name}
      onChange={(e) => setName(e.target.value)}
      className="input-field"
+     name=""
+     id=""
     />
 
     <input
@@ -93,6 +95,8 @@ function AddLatestProduct() {
      value={price}
      onChange={(e) => setPrice(e.target.value)}
      className="input-field"
+     name=""
+     id=""
     />
 
     {/* Main Image Upload */}
@@ -103,6 +107,8 @@ function AddLatestProduct() {
       accept="image/*"
       onChange={handleMainImageChange}
       className="input-field"
+      name=""
+      id=""
      />
      {previewMain && (
       <img
@@ -127,6 +133,8 @@ function AddLatestProduct() {
       accept="image/*"
       onChange={handleHoverImageChange}
       className="input-field"
+      name=""
+      id=""
      />
      {previewHover && (
       <img

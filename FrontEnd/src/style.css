@@ -241,17 +241,7 @@ img,
   transition: all ease-in 0.5s;
   padding: 10px;
 }
-.Overlay {
-  position: fixed;
-  top: 0;
-  right: 0%;
-  width: 100%;
-  background: #00000023;
-  height: 100vh;
-  z-index: 999990;
-  transition: all ease-in 0.8s;
-}
-SideBarOpen {
+.SideBarOpen {
   right: 0 !important;
 }
 .Cart-Products > div {

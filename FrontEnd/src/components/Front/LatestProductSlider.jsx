@@ -104,7 +104,7 @@ function LatestSlider() {
                 1400: { slidesPerView: 4 },
               }}
               spaceBetween={40}
-              loop={true}
+              // loop={true}
               speed={700}
               navigation={{
                 nextEl: '.NextBtn',
