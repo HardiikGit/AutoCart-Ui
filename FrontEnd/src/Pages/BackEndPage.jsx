@@ -3,7 +3,7 @@ import TabSwitchButton from "../components/Back/TabSwitchButton";
 import AddProducts from "../components/Back/AddProducts";
 import ViewProduct from "../components/Back/ViewProduct";
 import { Link } from "react-router-dom";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
 import CompaniesLogos from "../components/Back/CompaniesLogos";
 import CompanyLogos from "../components/Back/CompanyLogos";
 import AddLatestProduct from "../components/Back/AddLatestProduct";
@@ -15,8 +15,8 @@ function DashBoard() {
  return (
   <div className="container">
    <div className="BackToHome">
-    <Link to="/" className="BackArrow d-flex align-items-center" style={{ gap: '10px', fontSize: '20px', fontWeight: '600' }}>
-     <FaArrowLeftLong /> Back to home
+    <Link to="/" className="BackArrow d-flex align-items-center" style={{ gap: '10px', fontSize: '28px', fontWeight: '600' }}>
+     <FaHome />
     </Link>
     <div>
      <TabSwitchButton activeTab={activeTab} setActiveTab={setActiveTab} />
