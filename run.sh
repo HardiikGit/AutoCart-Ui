@@ -5,7 +5,7 @@ echo 'Yeah Its Starting .....Mmmmmmm'
 sleep 1 
 echo 'Done .... ✅'
 (cd BackEnd && node server.js &)
-sleep 1
+sleep 5
 echo ''
 echo ''
 echo ''
