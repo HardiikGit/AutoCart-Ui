@@ -68,8 +68,7 @@ function TrendingProductsSlider() {
                   borderRadius: "5px",
                   fontSize: "18px",
                   fontWeight: "500",
-               }}
-            >
+               }}>
                {popup}
             </div>
          )}
@@ -103,8 +102,7 @@ function TrendingProductsSlider() {
                                  borderRadius: "5px",
                                  fontWeight: "600",
                                  border: "1px solid #ddd",
-                              }}
-                           >
+                              }}>
                               {tab.label}
                            </button>
                         ))}
@@ -234,8 +232,7 @@ function TrendingProductsSlider() {
                                        textAlign: "center",
                                        padding: "30px",
                                        color: "#777",
-                                    }}
-                                 >
+                                    }}>
                                     No products available in this category.
                                  </p>
                               )}
