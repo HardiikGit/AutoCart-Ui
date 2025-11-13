@@ -258,7 +258,9 @@ function NextNavigationBar() {
                         <div className="topContent">
                            <ul className="topSlideShow-1 d-flex justify-content-end align-items-center">
                               <li className="slideShow-items relative" style={rightBorder}>
-                                 <button className="CartOpen" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }} onClick={() => { setShowCart(true) }}><CiShoppingCart />{cart.length}</button>
+                                 <button className="CartOpen" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--white-color)', display: 'none', background: 'none', border: 'none', height: '18px' }} onClick={() => { setShowCart(true) }}><CiShoppingCart />
+                                    <p style={{ position: 'absolute', top: '-5px', right: '5px', fontSize: '14px', color: 'var(--white-color)', background: 'var(--orange-color)' }}>{cart.length}</p>
+                                 </button>
                               </li>
                               <li className="slideShow-items relative" style={rightBorder}>
                                  <div className="currencyButton">

@@ -59,6 +59,9 @@
   .CartProductsMain {
     width: 60%;
   }
+  .trending_Banner {
+    display: none;
+  }
 }
 @media (max-width: 567px) {
   .MainBannerSection {
@@ -104,5 +107,8 @@
   .BodyCard,
   .CartProductsMain {
     width: 100% !important;
+  }
+  .Pop-up {
+    font-size: 14px !important;
   }
 }

@@ -36,7 +36,7 @@ function NavigationBarSection() {
                               </a>
                            </div>
                            <div className="CartPage">
-                              <button className="Cart-Button d-flex align-items-center" style={{ background: 'none', border: 'none', fontSize: '32px' }} onClick={() => { setShowCart(true) }}>
+                              <button className="Cart-Button d-flex align-items-center relative" style={{ background: 'none', border: 'none', fontSize: '32px' }} onClick={() => { setShowCart(true) }}>
                                  <div className="CartIcon">
                                     <CiShoppingCart />
                                  </div>
@@ -45,7 +45,7 @@ function NavigationBarSection() {
                                        My Cart
                                     </p>
                                  </div>
-                                 {cart.length}
+                                 <p style={{ position: 'absolute', top: '-3px', right: '3px', fontSize: '14px', color: 'var(--orange-color)', background: 'none', paddingLeft: '3px', background: 'var(--white-color)' }}>{cart.length}</p>
                               </button>
                            </div>
                         </div>
@@ -76,7 +76,7 @@ function NavigationBarSection() {
                            </a>
                         </div>
                         <div className="CartPage">
-                           <button className="Cart-Button d-flex align-items-center" style={{ background: 'none', border: 'none', fontSize: '32px' }}>
+                           <button className="Cart-Button d-flex align-items-center relative" style={{ background: 'none', border: 'none', fontSize: '32px' }} onClick={() => { setShowCart(true) }}>
                               <div className="CartIcon">
                                  <CiShoppingCart />
                               </div>
@@ -85,6 +85,7 @@ function NavigationBarSection() {
                                     My Cart
                                  </p>
                               </div>
+                              <p style={{ position: 'absolute', top: '-3px', right: '3px', fontSize: '14px', color: 'var(--orange-color)', background: 'none', paddingLeft: '3px', background: 'var(--white-color)' }}>{cart.length}</p>
                            </button>
                         </div>
                      </div>
@@ -93,7 +94,7 @@ function NavigationBarSection() {
             </div>
          </nav>
          <NextNavigationBar />
-         <CartProducts showCart={showCart} />
+         <CartProducts showCart={showCart} close={() => { setShowCart(false) }} />
       </>
    )
 }
