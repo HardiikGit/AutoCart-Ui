@@ -45,7 +45,7 @@ function NavigationBarSection() {
                                        My Cart
                                     </p>
                                  </div>
-                                 <p style={{ position: 'absolute', top: '-3px', right: '3px', fontSize: '14px', color: 'var(--orange-color)', background: 'none', paddingLeft: '3px', background: 'var(--white-color)' }}>{cart.length}</p>
+                                 <p style={{ position: 'absolute', top: '-3px', right: '3px', fontSize: '14px', color: 'var(--black-color)', paddingLeft: '3px', background: 'var(--white-color)' }}>{cart.length}</p>
                               </button>
                            </div>
                         </div>
@@ -85,7 +85,7 @@ function NavigationBarSection() {
                                     My Cart
                                  </p>
                               </div>
-                              <p style={{ position: 'absolute', top: '-3px', right: '3px', fontSize: '14px', color: 'var(--orange-color)', background: 'none', paddingLeft: '3px', background: 'var(--white-color)' }}>{cart.length}</p>
+                              <p style={{ position: 'absolute', top: '-3px', right: '45px', fontSize: '14px', color: 'var(--black-color)', background: 'var(--white-color)', paddingLeft: '3px' }}>{cart.length}</p>
                            </button>
                         </div>
                      </div>
