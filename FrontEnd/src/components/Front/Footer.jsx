@@ -1,11 +1,28 @@
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { PiAppStoreLogoBold } from "react-icons/pi";
+import { FaFacebookF } from "react-icons/fa";
+import { FaMapPin } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa6";
+import { FaPinterestP } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { RiVisaLine } from "react-icons/ri";
+import { RiMastercardLine } from "react-icons/ri";
+import { GrAmex } from "react-icons/gr";
+import { SiDiscover } from "react-icons/si";
+import { LiaCcDinersClub } from "react-icons/lia";
+
 const footerData = {
  aboutStore: {
   title: 'About Our Store',
-  description: 'Welcome to our store, where we pride ourselves on providing exceptional products and unparalleled customer service. Our store is a haven for those who appreciate quality, style, and innovation.',
+  description:
+   'Welcome to our store, where we pride ourselves on providing exceptional products and unparalleled customer service. Our store is a haven for those who appreciate quality, style, and innovation.',
   appLinks: [
-   { name: 'App Store', icon: 'fa-apple', link: '#' }, // Using Font Awesome icons as placeholders
-   { name: 'Google Play', icon: 'fa-google-play', link: '#' }
-  ]
+   { name: 'App Store', icon: <PiAppStoreLogoBold />, link: '#' },
+   { name: 'Google Play', icon: <IoLogoGooglePlaystore />, link: '#' },
+  ],
  },
  yourAccount: {
   title: 'Your Account',
@@ -15,8 +32,8 @@ const footerData = {
    { name: 'Delivery Information', link: '#' },
    { name: 'Contact', link: '#' },
    { name: 'FAQs', link: '#' },
-   { name: 'Shipping', link: '#' }
-  ]
+   { name: 'Shipping', link: '#' },
+  ],
  },
  quickLinks: {
   title: 'Quick Links',
@@ -26,8 +43,8 @@ const footerData = {
    { name: 'Shipping Policy', link: '#' },
    { name: 'Terms of Service', link: '#' },
    { name: 'Policy for Buyers', link: '#' },
-   { name: 'Policy for Sellers', link: '#' }
-  ]
+   { name: 'Policy for Sellers', link: '#' },
+  ],
  },
  footerLinks: {
   title: 'Footer Links',
@@ -37,32 +54,36 @@ const footerData = {
    { name: 'About Us', link: '#' },
    { name: 'FAQs', link: '#' },
    { name: 'Shipping & Refund', link: '#' },
-   { name: 'Sitemap', link: '#' }
-  ]
+   { name: 'Sitemap', link: '#' },
+  ],
  },
  contactUs: {
   title: 'Contact Us',
   details: [
-   { icon: 'fa-map-marker-alt', text: 'Autokart - Auto Parts Store 507-Union Trade Ipsum Doler Centre France' },
-   { icon: 'fa-envelope', text: 'demo@example.com' },
-   { icon: 'fa-phone-alt', text: '(+91) 9876-543-210' }
-  ]
+   {
+    icon: <FaMapPin />,
+    text: 'Autokart - Auto Parts Store 507-Union Trade Ipsum Doler Centre France',
+   },
+   { icon: <IoIosMail />, text: 'demo@example.com' },
+   { icon: <FaPhoneAlt />, text: '(+91) 9876-543-210' },
+  ],
  },
  socialMedia: [
-  { icon: 'fa-facebook-f', link: '#' },
-  { icon: 'fa-instagram', link: '#' },
-  { icon: 'fa-youtube', link: '#' },
-  { icon: 'fa-pinterest-p', link: '#' },
-  { icon: 'fa-twitter', link: '#' }
+  { name: 'Facebook', link: '#', icon: <FaFacebookF /> },
+  { name: 'Instagram', link: '#', icon: <FaInstagram /> },
+  { name: 'YouTu be', link: '#', icon: <FaYoutube /> },
+  { name: 'Pinterest', link: '#', icon: <FaPinterestP /> },
+  { name: 'Twitter', link: '#', icon: <FaTwitter /> },
  ],
- copyright: '© 2025, Autokart - Auto Parts Store (Password: demo) Powered by Shopify',
+ copyright:
+  '© 2025, Autokart - Auto Parts Store (Password: demo) Powered by Shopify',
  paymentMethods: [
-  { name: 'Visa', src: 'path/to/visa.png' }, // Replace with actual image paths
-  { name: 'Mastercard', src: 'path/to/mastercard.png' },
-  { name: 'Amex', src: 'path/to/amex.png' },
-  { name: 'Discover', src: 'path/to/discover.png' },
-  { name: 'Diners Club', src: 'path/to/diners.png' }
- ]
+  { name: 'Visa', icon: <RiVisaLine /> },
+  { name: 'Mastercard', icon: <RiMastercardLine /> },
+  { name: 'Amex', icon: <GrAmex /> },
+  { name: 'Discover', icon: <SiDiscover /> },
+  { name: 'Diners Club', icon: <LiaCcDinersClub /> },
+ ],
 };
 
 function Footer() {
@@ -74,65 +95,79 @@ function Footer() {
       <div className="footer-column about-store">
        <h3>{footerData.aboutStore.title}</h3>
        <p>{footerData.aboutStore.description}</p>
+
        <div className="app-links">
         {footerData.aboutStore.appLinks.map((app, index) => (
-         <a key={index} href={app.link} className="app-button">
-          <i className={`fab ${app.icon}`}></i> {app.name}
+         <a
+          key={index}
+          href={app.link}
+          className="app-button d-flex align-items-center " style={{ gap: '10px' }}
+         >
+          {app.icon}
+          <span>{app.name}</span>
          </a>
         ))}
        </div>
       </div>
-
       <div className="footer-column">
        <h3>{footerData.yourAccount.title}</h3>
        <ul>
         {footerData.yourAccount.links.map((link, index) => (
-         <li key={index}><a href={link.link}>{link.name}</a></li>
+         <li key={index}>
+          <a href={link.link}>{link.name}</a>
+         </li>
         ))}
        </ul>
       </div>
-
       <div className="footer-column">
        <h3>{footerData.quickLinks.title}</h3>
        <ul>
         {footerData.quickLinks.links.map((link, index) => (
-         <li key={index}><a href={link.link}>{link.name}</a></li>
+         <li key={index}>
+          <a href={link.link}>{link.name}</a>
+         </li>
         ))}
        </ul>
       </div>
-
       <div className="footer-column">
        <h3>{footerData.footerLinks.title}</h3>
        <ul>
         {footerData.footerLinks.links.map((link, index) => (
-         <li key={index}><a href={link.link}>{link.name}</a></li>
+         <li key={index}>
+          <a href={link.link}>{link.name}</a>
+         </li>
         ))}
        </ul>
       </div>
-
       <div className="footer-column contact-us">
        <h3>{footerData.contactUs.title}</h3>
        {footerData.contactUs.details.map((detail, index) => (
-        <div key={index} className="contact-item">
-         <i className={`fas ${detail.icon}`}></i>
+        <div key={index} className="contact-item flex items-center gap-2">
+         <span>{detail.icon}</span>
          <span>{detail.text}</span>
         </div>
        ))}
       </div>
      </div>
-
      <div className="footer-bottom">
       <div className="social-media">
        {footerData.socialMedia.map((social, index) => (
         <a key={index} href={social.link} className="social-icon">
-         <i className={`fab ${social.icon}`}></i>
+         {social.icon}
         </a>
        ))}
       </div>
+
       <p className="copyright">{footerData.copyright}</p>
+
       <div className="payment-methods">
        {footerData.paymentMethods.map((method, index) => (
-        <img key={index} src={method.src} alt={method.name} />
+        <img
+         key={index}
+         src={method.src}
+         alt={method.name}
+         className=""
+        />
        ))}
       </div>
      </div>
@@ -140,6 +175,6 @@ function Footer() {
    </div>
   </footer>
  );
-};
+}
 
 export default Footer;
