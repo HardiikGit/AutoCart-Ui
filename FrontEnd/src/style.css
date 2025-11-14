@@ -251,9 +251,6 @@ img,
   opacity: 1 !important;
 }
 .footer-top {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
   padding: 40px 0px;
   border-bottom: 1px solid #eee;
 }
@@ -335,29 +332,11 @@ img,
   margin-top: 3px; /* Adjust icon vertical alignment */
 }
 
-/* Footer Bottom */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 20px auto 0 auto;
-  padding: 0 15px;
-}
-
-.footer-bottom .social-media {
-  display: flex;
-  gap: 10px;
-}
-
 .footer-bottom .social-icon {
   width: 35px;
   height: 35px;
   border-radius: 50%;
   border: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #666;
   font-size: 16px;
   text-decoration: none;
@@ -374,56 +353,7 @@ img,
   flex-grow: 1; /* Allows copyright to take available space */
   text-align: center;
 }
-
-.footer-bottom .payment-methods {
-  display: flex;
-  gap: 5px;
-}
-
 .footer-bottom .payment-methods img {
   height: 20px; /* Adjust as needed */
   vertical-align: middle;
-}
-
-/* Responsive Adjustments (optional, but good practice) */
-@media (max-width: 992px) {
-  .footer-top {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .footer-column {
-    flex: 0 0 50%; /* Two columns per row on medium screens */
-    margin-bottom: 30px;
-  }
-  .contact-us,
-  .about-store {
-    flex: 0 0 100%; /* Full width for these on medium screens */
-  }
-  .footer-bottom {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .footer-bottom .copyright {
-    order: 2; /* Move copyright below social and payments */
-    text-align: center;
-  }
-  .footer-bottom .social-media {
-    order: 1;
-  }
-  .footer-bottom .payment-methods {
-    order: 3;
-  }
-}
-
-@media (max-width: 576px) {
-  .footer-column {
-    flex: 0 0 100%; /* Single column on small screens */
-    margin-bottom: 25px;
-  }
-  .footer-top {
-    padding-bottom: 20px;
-  }
-  .footer-container {
-    padding-top: 30px;
-  }
 }
